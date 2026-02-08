@@ -8,47 +8,66 @@
   <style>
     body {
       margin: 0;
-  font-family: Arial, sans-serif;
-  background: #000000;
-  color: white;
-  text-align: center;
+      min-height: 100vh;
+      font-family: 'Arial', sans-serif;
+      background: #000;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
 
-    header {
-      padding: 60px 20px;
+    .container {
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow:
+        0 0 20px #8a2be2,
+        0 0 40px #00ffff33;
     }
 
     h1 {
       font-size: 3rem;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
+      color: #fff;
+      text-shadow:
+        0 0 10px #8a2be2,
+        0 0 20px #00ffff;
     }
 
     p {
       font-size: 1.2rem;
-      opacity: 0.9;
+      margin-bottom: 40px;
+      color: #ccc;
     }
 
-    .btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 15px 30px;
-      background: #ff9800;
-      color: black;
-      font-weight: bold;
+    .neon-btn {
+      padding: 15px 40px;
+      font-size: 1.1rem;
+      color: #00ffff;
+      background: transparent;
+      border: 2px solid #00ffff;
+      border-radius: 50px;
+      cursor: pointer;
       text-decoration: none;
-      border-radius: 30px;
-      transition: 0.3s;
+      transition: 0.3s ease;
+      box-shadow:
+        0 0 10px #00ffff,
+        inset 0 0 10px #00ffff;
     }
 
-    .btn:hover {
-      background: #ffc107;
-      transform: scale(1.05);
+    .neon-btn:hover {
+      color: #000;
+      background: #00ffff;
+      box-shadow:
+        0 0 20px #00ffff,
+        0 0 40px #00ffff;
+      transform: scale(1.08);
     }
 
     footer {
-      margin-top: 80px;
-      padding: 20px;
-      font-size: 0.9rem;
+      margin-top: 40px;
+      font-size: 0.85rem;
       opacity: 0.6;
     }
   </style>
@@ -56,15 +75,19 @@
 
 <body>
 
-  <header>
+  <div class="container">
     <h1>🎮 Leo Game Creation</h1>
-    <p>Créateur de jeux & projets indépendants</p>
-    <a class="btn" href="#">Voir mes projets</a>
-  </header>
+    <p>Créateur de jeux & projets gaming indépendants</p>
 
-  <footer>
-    © 2026 Leo Game Creation — Hébergé gratuitement sur GitHub Pages 🚀
-  </footer>
+    <a class="neon-btn" href="#">
+      ▶ Voir mes projets
+    </a>
+
+    <footer>
+      <br>
+      © 2026 — Powered by GitHub Pages
+    </footer>
+  </div>
 
 </body>
 </html>
