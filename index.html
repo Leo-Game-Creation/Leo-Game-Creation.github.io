@@ -9,64 +9,80 @@
     body {
       margin: 0;
       min-height: 100vh;
-      font-family: 'Arial', sans-serif;
       background: #000;
-      color: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
+      font-family: Arial, sans-serif;
+      color: white;
       text-align: center;
     }
 
     .container {
-      padding: 40px;
-      border-radius: 20px;
+      padding: 50px;
+      border-radius: 25px;
       box-shadow:
-        0 0 20px #8a2be2,
-        0 0 40px #00ffff33;
+        0 0 25px #ff9800,
+        0 0 50px #ff980033;
+    }
+
+    .lion {
+      font-size: 4rem;
+      margin-bottom: 10px;
+      text-shadow:
+        0 0 10px #ff9800,
+        0 0 25px #ff5722;
     }
 
     h1 {
-      font-size: 3rem;
-      margin-bottom: 15px;
-      color: #fff;
+      font-size: 3.2rem;
+      margin: 10px 0;
+      color: #ffcc80;
       text-shadow:
-        0 0 10px #8a2be2,
-        0 0 20px #00ffff;
+        0 0 10px #ff9800,
+        0 0 25px #ff5722,
+        0 0 45px #ff9800;
+    }
+
+    h1 span {
+      color: #00ffff;
+      text-shadow:
+        0 0 10px #00ffff,
+        0 0 25px #00ffff;
     }
 
     p {
-      font-size: 1.2rem;
-      margin-bottom: 40px;
       color: #ccc;
+      margin-bottom: 40px;
+      font-size: 1.2rem;
     }
 
     .neon-btn {
-      padding: 15px 40px;
+      padding: 16px 45px;
       font-size: 1.1rem;
-      color: #00ffff;
-      background: transparent;
-      border: 2px solid #00ffff;
       border-radius: 50px;
-      cursor: pointer;
+      border: 2px solid #00ffff;
+      background: transparent;
+      color: #00ffff;
       text-decoration: none;
+      cursor: pointer;
       transition: 0.3s ease;
       box-shadow:
-        0 0 10px #00ffff,
-        inset 0 0 10px #00ffff;
+        0 0 15px #00ffff,
+        inset 0 0 15px #00ffff;
     }
 
     .neon-btn:hover {
-      color: #000;
       background: #00ffff;
+      color: #000;
       box-shadow:
-        0 0 20px #00ffff,
-        0 0 40px #00ffff;
-      transform: scale(1.08);
+        0 0 30px #00ffff,
+        0 0 60px #00ffff;
+      transform: scale(1.1);
     }
 
     footer {
-      margin-top: 40px;
+      margin-top: 35px;
       font-size: 0.85rem;
       opacity: 0.6;
     }
@@ -76,16 +92,19 @@
 <body>
 
   <div class="container">
-    <h1>🎮 Leo Game Creation</h1>
-    <p>Créateur de jeux & projets gaming indépendants</p>
+    <div class="lion">🦁</div>
+
+    <h1>Leo <span>Game</span></h1>
+
+    <p>Gaming • Création • Projets indépendants</p>
 
     <a class="neon-btn" href="#">
-      ▶ Voir mes projets
+      ▶ Entrer dans l’univers
     </a>
 
     <footer>
       <br>
-      © 2026 — Powered by GitHub Pages
+      © 2026 Leo Game — GitHub Pages
     </footer>
   </div>
 
