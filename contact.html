@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Leo Game Studio</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        body {
+            background: radial-gradient(circle at top, #111, #000 70%);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background: #0d0d0d;
+            padding: 50px;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 0 30px rgba(255, 120, 0, 0.3);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            color: #ff9800;
+            text-shadow: 0 0 12px #ff5722;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border: none;
+            background: #1a1a1a;
+            color: white;
+            font-size: 14px;
+        }
+
+        textarea {
+            resize: none;
+            height: 120px;
+        }
+
+        input:focus, textarea:focus {
+            outline: 2px solid #ff9800;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(45deg, #ff9800, #ff5722);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 15px;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #ff9800;
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 20px;
+            color: #aaa;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .back:hover {
+            color: #ff9800;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>📩 Contact</h1>
+
+        <!-- Formulaire email simple -->
+        <form action="mailto:alexandre.marechal1@gmail.com" method="post" enctype="text/plain">
+            <input type="text" name="Nom" placeholder="Ton nom" required>
+            <input type="email" name="Email" placeholder="Ton email" required>
+            <textarea name="Message" placeholder="Ton message..." required></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+
+        <a href="index.html" class="back">⬅ Retour à l'accueil</a>
+    </div>
+
+</body>
+</html>
