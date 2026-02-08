@@ -1,112 +1,103 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Leo Games</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leo Game</title>
 
-  <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background: #000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: Arial, sans-serif;
-      color: white;
-      text-align: center;
-    }
+    <style>
+        /* ===== Reset ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .container {
-      padding: 50px;
-      border-radius: 25px;
-      box-shadow:
-        0 0 25px #ff9800,
-        0 0 50px #ff980033;
-    }
+        /* ===== Fond gaming ===== */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: radial-gradient(circle at top, #1a1a1a, #0d0d0d);
+            color: white;
+            text-align: center;
+        }
 
-    .lion {
-      font-size: 4rem;
-      margin-bottom: 10px;
-      text-shadow:
-        0 0 10px #ff9800,
-        0 0 25px #ff5722;
-    }
+        /* ===== Header ===== */
+        header {
+            padding: 40px 20px;
+        }
 
-    h1 {
-      font-size: 3.2rem;
-      margin: 10px 0;
-      color: #ffcc80;
-      text-shadow:
-        0 0 10px #ff9800,
-        0 0 25px #ff5722,
-        0 0 45px #ff9800;
-    }
+        /* ===== Logo ===== */
+        .logo {
+            width: 350px;
+            max-width: 90%;
+            display: block;
+            margin: 0 auto 25px auto;
+            transition: transform 0.3s ease;
+        }
 
-    h1 span {
-      color: #00ffff;
-      text-shadow:
-        0 0 10px #00ffff,
-        0 0 25px #00ffff;
-    }
+        .logo:hover {
+            transform: scale(1.05);
+        }
 
-    p {
-      color: #ccc;
-      margin-bottom: 40px;
-      font-size: 1.2rem;
-    }
+        /* ===== Titre ===== */
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #ffb300;
+        }
 
-    .neon-btn {
-      padding: 16px 45px;
-      font-size: 1.1rem;
-      border-radius: 50px;
-      border: 2px solid #00ffff;
-      background: transparent;
-      color: #00ffff;
-      text-decoration: none;
-      cursor: pointer;
-      transition: 0.3s ease;
-      box-shadow:
-        0 0 15px #00ffff,
-        inset 0 0 15px #00ffff;
-    }
+        p {
+            color: #ccc;
+            margin-bottom: 40px;
+        }
 
-    .neon-btn:hover {
-      background: #00ffff;
-      color: #000;
-      box-shadow:
-        0 0 30px #00ffff,
-        0 0 60px #00ffff;
-      transform: scale(1.1);
-    }
+        /* ===== Bouton ===== */
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff9800, #ff5722);
+            padding: 12px 28px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+        }
 
-    footer {
-      margin-top: 35px;
-      font-size: 0.85rem;
-      opacity: 0.6;
-    }
-  </style>
+        .btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 15px #ff9800;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            margin-top: 60px;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+    </style>
 </head>
 
 <body>
 
-  <div class="container">
-    <div class="lion">🦁</div>
+    <header>
+        <!-- LOGO -->
+        <img src="assets/logo-leo-game.png" alt="Leo Game Logo" class="logo">
 
-    <h1>Leo <span>Game</span></h1>
+        <h1>Leo Game Studio</h1>
+        <p>Création de jeux vidéo fun et passionnants 🎮</p>
 
-    <p>Gaming • Création • Projets indépendants</p>
+        <a href="#games" class="btn">Découvrir les jeux</a>
+    </header>
 
-    <a class="neon-btn" href="#">
-      ▶ Entrer dans l’univers
-    </a>
+    <section id="games">
+        <h2 style="margin-top:40px;">Projets à venir 🚀</h2>
+        <p>Bientôt disponible...</p>
+    </section>
 
     <footer>
-      <br>
-      © 2026 Leo Game — GitHub Pages
+        © 2026 Leo Game — Tous droits réservés
     </footer>
-  </div>
 
 </body>
 </html>
