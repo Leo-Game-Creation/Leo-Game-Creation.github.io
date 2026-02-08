@@ -1,0 +1,242 @@
+/* =================================================
+   LEO GAME STUDIO - GLOBAL STYLE (Gaming / Esport)
+   ================================================= */
+
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* ===== BODY ===== */
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: radial-gradient(circle at top, #111 0%, #000 70%);
+    color: white;
+    overflow-x: hidden;
+}
+
+
+/* =================================================
+   NAVBAR
+   ================================================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 18px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    color: #ff9800;
+    font-weight: 900;
+    font-size: 1.4rem;
+    text-shadow: 0 0 12px #ff5722;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 0.95rem;
+    position: relative;
+    transition: 0.3s;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -6px;
+    left: 0;
+    background: #ff9800;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff9800;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* =================================================
+   HERO SECTION
+   ================================================= */
+
+header {
+    height: 100vh;
+    margin-top: 90px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding: 20px;
+}
+
+.logo {
+    width: 380px;
+    max-width: 90%;
+    margin-bottom: 30px;
+
+    filter: drop-shadow(0 0 20px #ff9800)
+            drop-shadow(0 0 40px #ff5722);
+
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+h1 {
+    font-size: 3rem;
+    color: #ffb300;
+    text-shadow: 0 0 15px #ff9800;
+    margin-bottom: 15px;
+}
+
+p {
+    color: #ccc;
+    margin-bottom: 40px;
+}
+
+
+/* =================================================
+   BUTTON
+   ================================================= */
+
+.btn {
+    background: linear-gradient(45deg, #ff9800, #ff5722);
+    padding: 14px 40px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 0 20px rgba(255, 120, 0, 0.6);
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 35px #ff9800;
+}
+
+
+/* =================================================
+   SECTION
+   ================================================= */
+
+section {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ff9800;
+}
+
+
+/* =================================================
+   CONTACT PAGE
+   ================================================= */
+
+.container {
+    background: #0d0d0d;
+    padding: 50px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 500px;
+    margin: 140px auto;
+
+    box-shadow: 0 0 30px rgba(255, 120, 0, 0.3);
+    text-align: center;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: none;
+    background: #1a1a1a;
+    color: white;
+}
+
+textarea {
+    resize: none;
+    height: 120px;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(45deg, #ff9800, #ff5722);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* =================================================
+   FOOTER
+   ================================================= */
+
+footer {
+    padding: 30px;
+    background: #0a0a0a;
+    color: #666;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+
+/* =================================================
+   MOBILE
+   ================================================= */
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .logo {
+        width: 260px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        font-size: 0.85rem;
+    }
+}
