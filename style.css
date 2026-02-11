@@ -240,3 +240,47 @@ footer {
         font-size: 0.85rem;
     }
 }
+
+
+/* =================================================
+   GAMES / PROJECT CARDS
+   ================================================= */
+
+.games-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.game-card {
+    background: #111;
+    border-radius: 20px;
+    width: 280px;
+    padding: 20px;
+
+    box-shadow: 0 0 20px rgba(255,120,0,0.2);
+    transition: 0.3s;
+}
+
+.game-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 35px rgba(255,120,0,0.6);
+}
+
+.game-card img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.game-card h3 {
+    color: #ff9800;
+    margin-bottom: 10px;
+}
+
+.game-card p {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
