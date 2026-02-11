@@ -6,16 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact | Leo Game Studio</title>
 
-      <!-- CSS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="./style.css">
 
     <!-- Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
-</head>
-    <!-- LIAISON CSS (IMPORTANT) -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Police gaming -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 
@@ -25,8 +19,6 @@
     <!-- ===== NAVBAR ===== -->
     <nav class="navbar">
         <div class="nav-container">
-            
-
             <div class="nav-links">
                 <a href="index.html">Accueil</a>
                 <a href="index.html#games">Jeux</a>
@@ -43,25 +35,19 @@
 
         <form action="https://formspree.io/f/xpqjqrkv" method="POST">
 
-            <!-- redirection -->
-            <form action="https://formspree.io/f/xpqjqrkv" method="POST">
+            <input type="hidden" name="_next" value="merci.html">
 
-    <input type="hidden" name="_next" value="merci.html">
+            <input type="text" name="name" placeholder="Ton nom" required>
 
-    <input type="text" name="name" placeholder="Ton nom" required>
+            <input type="email" name="email" placeholder="Ton email" required>
 
-    <input type="email" name="email" placeholder="Ton email" required>
+            <textarea name="message" placeholder="Ton message..." required></textarea>
 
-    <textarea name="message" placeholder="Ton message..." required></textarea>
-
-    <button type="submit">Envoyer</button>
-
-</form>
+            <button type="submit">Envoyer</button>
 
         </form>
 
     </div>
-
 
 </body>
 </html>
