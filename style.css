@@ -269,11 +269,16 @@ footer {
     box-shadow: 0 0 35px rgba(255,120,0,0.6);
 }
 
-.game-card img {
-    width: 100%;
-    border-radius: 15px;
-    margin-bottom: 15px;
+.game-card {
+    width: 240px;
 }
+
+.game-card img {
+    width: 75%;
+    display: block;
+    margin: 0 auto 15px auto;
+}
+
 
 .game-card h3 {
     color: #ff9800;
