@@ -1,5 +1,5 @@
 /* =================================================
-   LEO GAME STUDIO - GLOBAL STYLE (Gaming / Esport)
+   LEO GAME STUDIO - CLEAN GAMING STYLE
    ================================================= */
 
 /* ===== RESET ===== */
@@ -7,10 +7,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
 }
 
-/* ===== BODY ===== */
 body {
     font-family: 'Orbitron', sans-serif;
     background: radial-gradient(circle at top, #111 0%, #000 70%);
@@ -36,8 +34,7 @@ body {
     margin: auto;
     padding: 18px 30px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-end;
 }
 
 .nav-links {
@@ -48,32 +45,15 @@ body {
 .nav-links a {
     text-decoration: none;
     color: white;
-    font-size: 0.95rem;
-    position: relative;
-    transition: transform 0.4s ease;
-}
-
-.nav-links a::after {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    bottom: -6px;
-    left: 0;
-    background: #ff9800;
-    transition: transform 0.4s ease;
+    transition: 0.3s;
 }
 
 .nav-links a:hover {
     color: #ff9800;
 }
 
-.nav-links a:hover::after {
-    width: 100%;
-}
-
 /* =================================================
-   HERO SECTION
+   HERO
    ================================================= */
 
 header {
@@ -84,53 +64,24 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 20px;
 }
 
 .logo {
-    width: 380px;
+    width: 350px;
     max-width: 90%;
     margin-bottom: 30px;
-    filter: drop-shadow(0 0 20px #ff9800)
-            drop-shadow(0 0 40px #ff5722);
-    animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
+    filter: drop-shadow(0 0 20px #ff9800);
 }
 
 h1 {
     font-size: 3rem;
     color: #ffb300;
-    text-shadow: 0 0 15px #ff9800;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 p {
     color: #ccc;
-    margin-bottom: 40px;
-}
-
-/* =================================================
-   BUTTON
-   ================================================= */
-
-.btn {
-    background: linear-gradient(45deg, #ff9800, #ff5722);
-    padding: 14px 40px;
-    border-radius: 12px;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    transition: 0.3s;
-    box-shadow: 0 0 20px rgba(255,120,0,0.6);
-}
-
-.btn:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 35px #ff9800;
+    margin-bottom: 20px;
 }
 
 /* =================================================
@@ -149,7 +100,7 @@ h2 {
 }
 
 /* =================================================
-   GAMES / PROJECT CARDS
+   GAME CARDS
    ================================================= */
 
 .games-grid {
@@ -157,110 +108,68 @@ h2 {
     justify-content: center;
     gap: 50px;
     flex-wrap: wrap;
-    margin-top: 40px;
 }
 
 .game-card {
     background: linear-gradient(180deg, #1a1a1a, #111);
     border-radius: 20px;
-    width: 260px;
+    width: 300px;
     padding: 20px;
-    transition: 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 0 25px rgba(255,120,0,0.15);
-   overflow: hidden;
 }
 
 .game-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 0 45px rgba(255,120,0,0.6);
-   background: red !important;
 }
+
+/* ===== IMAGE WRAPPER (IMPORTANT) ===== */
+
+.image-wrapper {
+    overflow: hidden;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* ===== ZOOM EFFECT ===== */
 
 .game-card:hover .image-wrapper img {
     transform: scale(1.15);
 }
 
-/* Image principale */
-.game-card img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 15px;
-    transition: 0.4s ease;
-}
+/* ===== TITRES ===== */
 
-.game-card:hover img {
-    transform: scale(1.12);
-    filter: brightness(1.1);
-}
-
-/* Galerie secondaire */
-.game-gallery {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.game-gallery img {
-    width: 48%;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-/* Titres cartes */
 .game-card h3 {
     color: #ffb300;
     margin-bottom: 10px;
 }
 
-/* Texte cartes */
 .game-card p {
     font-size: 0.9rem;
-    margin-bottom: 10px;
     color: #ccc;
 }
 
-/* =================================================
-   CONTACT PAGE
-   ================================================= */
+/* ===== GALERIE SECONDAIRE ===== */
 
-.container {
-    background: #0d0d0d;
-    padding: 50px;
-    border-radius: 20px;
-    width: 100%;
-    max-width: 500px;
-    margin: 140px auto;
-    box-shadow: 0 0 30px rgba(255,120,0,0.3);
-    text-align: center;
+.game-gallery {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
 }
 
-input, textarea {
-    width: 100%;
-    padding: 14px;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    border: none;
-    background: #1a1a1a;
-    color: white;
-}
-
-textarea {
-    resize: none;
-    height: 120px;
-}
-
-button {
-    width: 100%;
-    padding: 14px;
-    border: none;
+.game-gallery img {
+    width: 48%;
+    height: 110px;
+    object-fit: cover;
     border-radius: 12px;
-    background: linear-gradient(45deg, #ff9800, #ff5722);
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
 }
 
 /* =================================================
@@ -271,7 +180,6 @@ footer {
     padding: 30px;
     background: #0a0a0a;
     color: #666;
-    font-size: 0.9rem;
     text-align: center;
 }
 
@@ -281,19 +189,15 @@ footer {
 
 @media (max-width: 768px) {
 
-    h1 {
-        font-size: 2rem;
-    }
-
-    .logo {
-        width: 260px;
+    .game-card {
+        width: 90%;
     }
 
     .games-grid {
         gap: 30px;
     }
 
-    .game-card {
-        width: 90%;
+    h1 {
+        font-size: 2rem;
     }
 }
