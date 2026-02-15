@@ -331,5 +331,5 @@ footer {
 
 .project-gallery img {
     width: 48%;
-    border-radius: 10px;
+    height: auto;
 }
