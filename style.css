@@ -176,6 +176,10 @@ h2 {
    background: red !important;
 }
 
+.game-card:hover .image-wrapper img {
+    transform: scale(1.15);
+}
+
 /* Image principale */
 .game-card img {
     width: 100%;
