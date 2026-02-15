@@ -173,6 +173,7 @@ h2 {
 .game-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 0 45px rgba(255,120,0,0.6);
+   background: red !important;
 }
 
 /* Image principale */
@@ -186,7 +187,7 @@ h2 {
 }
 
 .game-card:hover img {
-    transform: scale(1.05);
+    transform: scale(1.2);
 }
 
 /* Galerie secondaire */
