@@ -333,3 +333,13 @@ footer {
     width: 48%;
     height: auto;
 }
+
+/* FORCE TAILLE IMAGES PROJET */
+
+.project-card img {
+    width: 240px !important;
+    height: 160px !important;
+    object-fit: cover !important;
+    display: block;
+    margin: 0 auto 15px auto;
+}
