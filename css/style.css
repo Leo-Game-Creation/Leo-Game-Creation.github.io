@@ -53,19 +53,16 @@ p {
 }
 
 /* BOUTON */
-.btn {
+.back {
     display: inline-block;
-    margin-top: 10px;
-    padding: 8px 16px;
-    background: #ff9800;
-    color: black;
+    margin-top: 15px;
+    color: #ff9800;
     text-decoration: none;
-    border-radius: 6px;
     font-weight: bold;
 }
 
-.btn:hover {
-    background: #ffb300;
+.back:hover {
+    text-decoration: underline;
 }
 
 /* PAGE PROJET */
