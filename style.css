@@ -201,3 +201,7 @@ footer {
         font-size: 2rem;
     }
 }
+
+    .game-card:hover {
+        background: red !important;
+}
