@@ -187,7 +187,8 @@ h2 {
 }
 
 .game-card:hover img {
-    transform: scale(1.2);
+    transform: scale(1.12);
+    filter: brightness(1.1);
 }
 
 /* Galerie secondaire */
