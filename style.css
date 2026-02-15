@@ -317,9 +317,10 @@ footer {
 }
 
 .project-card img {
-    width: 100%;
-    border-radius: 12px;
-    margin-bottom: 15px;
+    width: 240px;
+    height: auto;
+    display: block;
+    margin: 0 auto 15px auto;
 }
 
 .project-gallery {
