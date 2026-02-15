@@ -167,6 +167,7 @@ h2 {
     padding: 20px;
     transition: 0.3s;
     box-shadow: 0 0 25px rgba(255,120,0,0.15);
+   overflow: hidden;
 }
 
 .game-card:hover {
