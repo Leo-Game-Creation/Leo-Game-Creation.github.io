@@ -254,12 +254,7 @@ footer {
 }
 
 .game-card {
-    background: #111;
-    border-radius: 20px;
-    width: 240px;
-    padding: 20px;
-    box-shadow: 0 0 20px rgba(255,120,0,0.2);
-    transition: 0.3s;
+    width: 260px;
 }
 
 .game-card:hover {
@@ -268,12 +263,8 @@ footer {
 }
 
 .game-card img {
-    width: 200px;
-    height: 140px;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto 15px auto;
-    border-radius: 10px;
+    width: 100%;
+    height: 150px;
 }
 
 .game-gallery {
