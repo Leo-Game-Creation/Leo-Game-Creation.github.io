@@ -343,3 +343,32 @@ footer {
     display: block;
     margin: 0 auto 15px auto;
 }
+
+/* ==============================
+   SECTION JEUX — GALERIE IMAGES
+   ============================== */
+
+.game-gallery {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.game-gallery img {
+    width: 55% !important;
+    max-width: 120px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Ajuste la taille principale des images projet */
+.games-grid .game-card img {
+    width: 200px !important;
+    max-width: 80%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 15px auto;
+}
