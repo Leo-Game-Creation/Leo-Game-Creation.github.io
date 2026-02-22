@@ -117,3 +117,46 @@ footer {
     background: #000;
     color: #666;
 }
+
+footer a {
+    color: #ff9800;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* ===== PAGE CONFIDENTIALITÉ ===== */
+
+.confidentialite {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+    text-align: left;
+    line-height: 1.7;
+    background: #1a1a1a;
+    border-radius: 15px;
+}
+
+.confidentialite h2 {
+    margin-top: 40px;
+    color: #ff9800;
+}
+
+.confidentialite h3 {
+    margin-top: 25px;
+    color: #ffb300;
+}
+
+.confidentialite ul {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.confidentialite hr {
+    border: none;
+    height: 1px;
+    background: #333;
+}
