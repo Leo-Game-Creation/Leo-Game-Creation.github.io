@@ -1,1 +1,363 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeonEarn Cash - Gagnez de l'argent facilement</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1a3e 100%);
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: rgba(10, 14, 39, 0.95);
+            padding: 20px;
+            border-bottom: 2px solid #00ff00;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo-icon {
+            background: #00ff00;
+            color: #000;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .sign-in-btn {
+            background: #00ff00;
+            color: #000;
+            border: none;
+            padding: 12px 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .sign-in-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Main Container */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+            line-height: 1.2;
+        }
+
+        .hero h1 .green {
+            color: #00ff00;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #aaa;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            background: #00ff00;
+            color: #000;
+            border: none;
+            padding: 18px 40px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: #00dd00;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+        }
+
+        /* Carousel */
+        .carousel-section {
+            margin: 60px 0;
+        }
+
+        .carousel-container {
+            position: relative;
+            background: rgba(30, 30, 60, 0.8);
+            border: 2px solid #00ff00;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 600px;
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .carousel-images {
+            position: relative;
+            display: flex;
+            overflow: hidden;
+            border: 2px solid #00ff00;
+        }
+
+        .carousel-images img {
+            width: 100%;
+            height: auto;
+            display: none;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .carousel-images img.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .carousel-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(0, 255, 0, 0.3);
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 1px solid #00ff00;
+        }
+
+        .carousel-dot.active {
+            background: #00ff00;
+            transform: scale(1.3);
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 255, 0, 0.2);
+            border: 1px solid #00ff00;
+            color: #00ff00;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 20px;
+            transition: all 0.3s;
+            z-index: 5;
+        }
+
+        .carousel-nav:hover {
+            background: rgba(0, 255, 0, 0.4);
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+        }
+
+        .carousel-nav.prev {
+            left: 10px;
+        }
+
+        .carousel-nav.next {
+            right: 10px;
+        }
+
+        /* Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .feature-card {
+            background: rgba(30, 30, 60, 0.8);
+            border: 2px solid #00ff00;
+            padding: 30px;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            color: #00ff00;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .feature-card p {
+            color: #aaa;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(10, 14, 39, 0.95);
+            border-top: 2px solid #00ff00;
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: 60px;
+            color: #aaa;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .carousel-container {
+                min-height: 400px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">⚡</div>
+                <span>NEONEARN <span class="green">CASH</span></span>
+            </div>
+            <button class="sign-in-btn">SIGN IN</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>REGARDE. <span class="green">CLIQUE.</span> <span style="color: #888;">ENCAISSE.</span></h1>
+            <p>Gagnez de l'argent facilement en regardant des vidéos et en complétant des missions</p>
+            <button class="cta-button">CRÉER UN COMPTE →</button>
+        </section>
+
+        <section class="carousel-section">
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel-images">
+                        <img src="https://via.placeholder.com/400x800?text=NeonEarn+Screen+1" alt="Écran 1" class="active">
+                        <img src="https://via.placeholder.com/400x800?text=NeonEarn+Screen+2" alt="Écran 2">
+                        <img src="https://via.placeholder.com/400x800?text=NeonEarn+Screen+3" alt="Écran 3">
+                        <img src="https://via.placeholder.com/400x800?text=NeonEarn+Screen+4" alt="Écran 4">
+                    </div>
+                    <div class="carousel-nav prev" onclick="changeSlide(-1)">❮</div>
+                    <div class="carousel-nav next" onclick="changeSlide(1)">❯</div>
+                    <div class="carousel-controls">
+                        <span class="carousel-dot active" onclick="goToSlide(0)"></span>
+                        <span class="carousel-dot" onclick="goToSlide(1)"></span>
+                        <span class="carousel-dot" onclick="goToSlide(2)"></span>
+                        <span class="carousel-dot" onclick="goToSlide(3)"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <h3>⚡ Rapide</h3>
+                <p>Inscription en 30 secondes. Aucune carte bancaire requise. Commencez à gagner immédiatement.</p>
+            </div>
+            <div class="feature-card">
+                <h3>💰 Lucratif</h3>
+                <p>Gagnez jusqu'à 0.050€ par mission. Les gains s'accumulent rapidement au fil du temps.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🎯 Flexible</h3>
+                <p>Complétez des missions quand vous le souhaitez. Pas d'engagement minimum. Arrêtez quand vous voulez.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 NEONEARN CASH // v1.0</p>
+        <p>Règlement & RGPD © LeoGame Création</p>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-images img');
+        const dots = document.querySelectorAll('.carousel-dot');
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentSlide = index;
+        }
+
+        function changeSlide(direction) {
+            let newIndex = (currentSlide + direction + slides.length) % slides.length;
+            showSlide(newIndex);
+        }
+
+        function goToSlide(index) {
+            showSlide(index);
+        }
+
+        // Auto-rotation every 5 seconds
+        setInterval(() => changeSlide(1), 5000);
+    </script>
+</body>
+</html>
