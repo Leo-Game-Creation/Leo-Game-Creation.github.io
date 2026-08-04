@@ -6,9 +6,9 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: #000000;
-    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0a0a0a;
+    color: #e0e0e0;
     text-align: center;
 }
 
@@ -16,6 +16,20 @@ body {
 
 .home-header {
     padding: 60px 20px 30px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-bottom: 2px solid #ff9800;
+}
+
+.home-header h1 {
+    color: #fff;
+    font-size: 36px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px rgba(255, 152, 0, 0.3);
+}
+
+.home-header p {
+    color: #aaa;
+    font-size: 16px;
 }
 
 .logo {
@@ -30,57 +44,177 @@ body {
     justify-content: center;
     gap: 50px;
     flex-wrap: wrap;
-    padding: 40px 20px;
+    padding: 60px 20px;
+    background: #0a0a0a;
 }
 
 .game {
-    background: #1a1a1a;
+    background: #1a1a2e;
     padding: 25px;
-    border-radius: 15px;
+    border-radius: 12px;
     width: 280px;
-    transition: 0.3s;
+    transition: all 0.3s;
+    border: 1px solid #ff9800;
 }
 
 .game:hover {
     transform: translateY(-8px);
+    box-shadow: 0 0 20px rgba(255, 152, 0, 0.3);
+}
+
+.game h2 {
+    color: #ff9800;
+    margin: 15px 0;
+    font-size: 20px;
+}
+
+.game p {
+    color: #aaa;
+    font-size: 14px;
+    margin-bottom: 15px;
 }
 
 .game img {
     width: 100%;
     border-radius: 10px;
     margin-bottom: 15px;
+    border: 1px solid #ff9800;
+}
+
+/* NEON SECTION (NeonEarn Cash) */
+.neon-section {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    padding: 60px 20px;
+    margin: 40px 0;
+    border-top: 2px solid #ff9800;
+    border-bottom: 2px solid #ff9800;
+}
+
+.neon-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.neon-content h2 {
+    font-size: 36px;
+    color: #fff;
+    margin-bottom: 15px;
+    text-shadow: 0 0 20px rgba(255, 152, 0, 0.4);
+}
+
+.neon-content h2 .green {
+    color: #ff9800;
+}
+
+.neon-content p {
+    color: #aaa;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.neon-content ul {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.neon-content ul li {
+    color: #aaa;
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+}
+
+.neon-content ul li:before {
+    content: "⚡";
+    position: absolute;
+    left: 0;
+    color: #ff9800;
+}
+
+.neon-btn {
+    background: #ff9800;
+    color: #000;
+    border: none;
+    padding: 15px 35px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.neon-btn:hover {
+    background: #ffb300;
+    box-shadow: 0 0 20px rgba(255, 152, 0, 0.5);
+    transform: scale(1.05);
+}
+
+.neon-image {
+    text-align: center;
+}
+
+.neon-image img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #ff9800;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(255, 152, 0, 0.2);
 }
 
 /* BUTTON */
 .btn {
     display: inline-block;
     margin-top: 10px;
-    padding: 8px 18px;
+    padding: 10px 25px;
     background: #ff9800;
     color: black;
     text-decoration: none;
-    border-radius: 6px;
+    border-radius: 4px;
     font-weight: bold;
+    transition: all 0.3s;
 }
 
 .btn:hover {
     background: #ffb300;
+    box-shadow: 0 0 15px rgba(255, 152, 0, 0.4);
 }
 
 /* PROJECT PAGE */
 .project-header {
     padding: 60px 20px 20px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-bottom: 2px solid #ff9800;
+}
+
+.project-header h1 {
+    color: #fff;
+    font-size: 36px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px rgba(255, 152, 0, 0.3);
+}
+
+.project-header p {
+    color: #aaa;
 }
 
 .project {
     padding: 30px 20px;
+    background: #0a0a0a;
 }
 
 .project img {
     width: 320px;
     max-width: 90%;
-    border-radius: 12px;
+    border-radius: 8px;
     margin-bottom: 20px;
+    border: 1px solid #ff9800;
 }
 
 .gallery {
@@ -93,7 +227,13 @@ body {
 
 .gallery img {
     width: 220px;
-    border-radius: 10px;
+    border-radius: 8px;
+    border: 1px solid #ff9800;
+    transition: all 0.3s;
+}
+
+.gallery img:hover {
+    box-shadow: 0 0 15px rgba(255, 152, 0, 0.4);
 }
 
 /* BACK BUTTON FIXED */
@@ -101,32 +241,40 @@ body {
     position: fixed;
     top: 20px;
     left: 20px;
-    color: #ff9800;
+    background: #ff9800;
+    color: #000;
+    padding: 10px 20px;
     text-decoration: none;
     font-weight: bold;
+    z-index: 100;
+    transition: all 0.3s;
+    border-radius: 4px;
 }
 
 .back-fixed:hover {
-    opacity: 0.7;
+    background: #ffb300;
+    box-shadow: 0 0 15px rgba(255, 152, 0, 0.5);
 }
 
 /* FOOTER */
 footer {
     margin-top: 80px;
-    padding: 20px;
-    background: #000;
+    padding: 30px 20px;
+    background: #0a0a0a;
     color: #666;
+    border-top: 2px solid #ff9800;
 }
 
 footer a {
     color: #ff9800;
     text-decoration: none;
+    transition: all 0.3s;
 }
 
 footer a:hover {
+    color: #ffb300;
     text-decoration: underline;
 }
-
 
 /* ===== PAGE CONFIDENTIALITÉ ===== */
 
@@ -136,18 +284,26 @@ footer a:hover {
     padding: 40px 20px;
     text-align: left;
     line-height: 1.7;
-    background: #1a1a1a;
-    border-radius: 15px;
+    background: #1a1a2e;
+    border-radius: 8px;
+    border-left: 4px solid #ff9800;
 }
 
 .confidentialite h2 {
     margin-top: 40px;
     color: #ff9800;
+    font-size: 22px;
 }
 
 .confidentialite h3 {
     margin-top: 25px;
     color: #ffb300;
+    font-size: 18px;
+}
+
+.confidentialite p {
+    color: #aaa;
+    margin-bottom: 15px;
 }
 
 .confidentialite ul {
@@ -155,8 +311,53 @@ footer a:hover {
     margin-top: 10px;
 }
 
+.confidentialite ul li {
+    color: #aaa;
+    margin-bottom: 8px;
+}
+
+.confidentialite a {
+    color: #ff9800;
+    text-decoration: none;
+}
+
+.confidentialite a:hover {
+    color: #ffb300;
+    text-decoration: underline;
+}
+
 .confidentialite hr {
     border: none;
     height: 1px;
-    background: #333;
+    background: #ff9800;
+    opacity: 0.3;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .home-header h1 {
+        font-size: 28px;
+    }
+
+    .neon-container {
+        grid-template-columns: 1fr;
+    }
+
+    .neon-content h2 {
+        font-size: 28px;
+    }
+
+    .project-header h1 {
+        font-size: 28px;
+    }
+
+    .games {
+        gap: 20px;
+        padding: 40px 15px;
+    }
+
+    .game {
+        width: 100%;
+        max-width: 300px;
+    }
 }
