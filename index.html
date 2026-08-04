@@ -4,6 +4,105 @@
     <meta charset="UTF-8">
     <title>Leo Game Studio</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .neon-section {
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1a3e 100%);
+            padding: 40px 20px;
+            margin: 40px 0;
+            border-top: 2px solid #00ff00;
+            border-bottom: 2px solid #00ff00;
+        }
+
+        .neon-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .neon-content h2 {
+            font-size: 36px;
+            color: #fff;
+            margin-bottom: 15px;
+            text-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+        }
+
+        .neon-content h2 .green {
+            color: #00ff00;
+        }
+
+        .neon-content p {
+            color: #aaa;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .neon-content ul {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .neon-content ul li {
+            color: #aaa;
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .neon-content ul li:before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+            color: #00ff00;
+        }
+
+        .neon-btn {
+            background: #00ff00;
+            color: #000;
+            border: none;
+            padding: 15px 35px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .neon-btn:hover {
+            background: #00dd00;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+            transform: scale(1.05);
+        }
+
+        .neon-image {
+            text-align: center;
+        }
+
+        .neon-image img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #00ff00;
+            box-shadow: 0 0 30px rgba(0, 255, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .neon-container {
+                grid-template-columns: 1fr;
+            }
+
+            .neon-content h2 {
+                font-size: 28px;
+            }
+
+            .neon-section {
+                padding: 30px 15px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -29,6 +128,29 @@
         <a href="pages/BrickColorNumber.html" class="btn">Voir le projet</a>
     </div>
 
+</section>
+
+<!-- Section NeonEarn Cash -->
+<section class="neon-section">
+    <div class="neon-container">
+        <div class="neon-content">
+            <h2>NEONEARN <span class="green">CASH</span></h2>
+            <p>Notre nouvelle plateforme de monétisation ! Gagnez de l'argent réel en regardant des vidéos et en complétant des missions simples.</p>
+            
+            <ul>
+                <li>Inscription en 30 secondes - Aucune carte bancaire requise</li>
+                <li>Gagnez jusqu'à 0.050€ par mission</li>
+                <li>Retraits flexibles et rapides</li>
+                <li>Disponible 24h/24 - Travaillez à votre rythme</li>
+            </ul>
+
+            <a href="pages/NeonEarnCash.html" class="neon-btn">DÉCOUVRIR →</a>
+        </div>
+
+        <div class="neon-image">
+            <img src="images/neon-earn-preview.jpg" alt="NeonEarn Cash Preview">
+        </div>
+    </div>
 </section>
 
 <footer>
