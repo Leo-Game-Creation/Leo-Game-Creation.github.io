@@ -3,42 +3,48 @@
    ========================================================= */
 
 :root {
-    --bg: #08080c;
-    --surface: #12121a;
-    --surface-2: #191923;
+    --bg: #050506;
+    --surface: #101014;
+    --surface-2: #17171d;
     --primary: #ff9800;
     --primary-hover: #ffb300;
+    --gold: #ffd54a;
     --text: #ffffff;
     --muted: #a5a5b0;
-    --border: rgba(255, 152, 0, 0.28);
-    --shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
-    --glow: 0 0 24px rgba(255, 152, 0, 0.18);
+    --border: rgba(255, 152, 0, 0.30);
+    --shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+    --glow: 0 0 28px rgba(255, 152, 0, 0.22);
     --radius: 14px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { min-height: 100vh; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); color: var(--text); text-align: center; line-height: 1.5; }
+body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: -1; background: radial-gradient(circle at 50% -10%, rgba(255, 152, 0, 0.10), transparent 38%), radial-gradient(circle at 50% 100%, rgba(255, 152, 0, 0.045), transparent 30%); }
 a { color: inherit; }
 img { display: block; max-width: 100%; }
 
 .home-header,
-.project-header { padding: 56px 20px 34px; background: radial-gradient(circle at top, #20203a 0%, #12121d 45%, #0b0b10 100%); border-bottom: 1px solid var(--border); }
-.home-header { padding: 42px 20px 28px; }
+.project-header { padding: 56px 20px 34px; background: radial-gradient(circle at 50% 20%, #25200f 0%, #14141b 42%, #08080b 100%); border-bottom: 1px solid var(--border); box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35); }
+.home-header { padding: 24px 20px 20px; }
+.home-header .logo { width: 300px; max-width: min(72vw, 300px); margin: 0 auto 2px; filter: drop-shadow(0 0 14px rgba(255, 152, 0, 0.34)); }
+.home-header p,
+.project-header p { color: #c0c0c8; font-size: 16px; letter-spacing: 0.02em; }
+.home-header p::before,
+.home-header p::after { content: "✦"; color: var(--primary); margin: 0 10px; font-size: 12px; }
+.logo { width: 180px; max-width: 70vw; margin: 0 auto 16px; }
 .home-header h1,
 .project-header h1 { color: var(--text); font-size: clamp(28px, 4vw, 40px); line-height: 1.15; margin-bottom: 10px; text-shadow: 0 0 22px rgba(255, 152, 0, 0.22); }
-.home-header p,
-.project-header p { color: var(--muted); font-size: 16px; }
-.logo { width: 180px; max-width: 70vw; margin: 0 auto 16px; }
 
 /* =========================================================
    PROJECTS
    ========================================================= */
-.games { width: min(1280px, calc(100% - 40px)); margin: 0 auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; padding: 56px 0; align-items: stretch; }
-.game { display: flex; flex-direction: column; background: linear-gradient(180deg, var(--surface-2), var(--surface)); padding: 20px; border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease; }
-.game:hover { transform: translateY(-6px); border-color: rgba(255, 152, 0, 0.6); box-shadow: var(--shadow), var(--glow); }
-.game img { width: 100%; height: auto; object-fit: contain; object-position: center; background: #0b0b10; border-radius: 10px; margin-bottom: 18px; border: 1px solid rgba(255, 255, 255, 0.08); }
-.game h2 { color: var(--primary); margin-bottom: 8px; font-size: 21px; }
+.games { width: min(1280px, calc(100% - 40px)); margin: 0 auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; padding: 48px 0 56px; align-items: stretch; }
+.game { display: flex; flex-direction: column; background: linear-gradient(180deg, rgba(30, 29, 34, 0.98), rgba(12, 12, 16, 0.98)); padding: 20px; border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; position: relative; transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease; }
+.game::before { content: ""; position: absolute; top: 0; left: 12%; right: 12%; height: 2px; background: linear-gradient(90deg, transparent, var(--primary), transparent); opacity: 0.8; }
+.game:hover { transform: translateY(-6px); border-color: rgba(255, 152, 0, 0.68); box-shadow: var(--shadow), var(--glow); }
+.game img { width: 100%; height: auto; object-fit: contain; object-position: center; background: #08080b; border-radius: 10px; margin-bottom: 18px; border: 1px solid rgba(255, 255, 255, 0.08); }
+.game h2 { color: var(--primary); margin-bottom: 8px; font-size: 21px; text-shadow: 0 0 12px rgba(255, 152, 0, 0.15); }
 .game p { color: var(--muted); font-size: 14px; margin-bottom: 14px; }
 .game .btn { margin-top: auto; }
 .green { color: var(--primary); }
@@ -47,9 +53,9 @@ img { display: block; max-width: 100%; }
    BUTTONS
    ========================================================= */
 .btn,
-.neon-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 11px 22px; border: 1px solid transparent; border-radius: 9px; background: var(--primary); color: #111; text-decoration: none; font-weight: 700; cursor: pointer; transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease; }
+.neon-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 11px 22px; border: 1px solid rgba(255, 213, 74, 0.35); border-radius: 9px; background: linear-gradient(135deg, #ff8f00, #ffb300); color: #111; text-decoration: none; font-weight: 800; cursor: pointer; transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease; }
 .btn:hover,
-.neon-btn:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: 0 8px 22px rgba(255, 152, 0, 0.22); }
+.neon-btn:hover { background: linear-gradient(135deg, #ffb300, #ffd54a); transform: translateY(-2px); box-shadow: 0 8px 22px rgba(255, 152, 0, 0.30); }
 
 /* =========================================================
    PROJECT PAGES
@@ -86,7 +92,7 @@ footer a:hover { color: var(--primary-hover); text-decoration: underline; }
 /* =========================================================
    FOOTER
    ========================================================= */
-footer { margin-top: 56px; padding: 28px 20px; background: #07070a; color: #777782; border-top: 1px solid var(--border); font-size: 14px; }
+footer { margin-top: 0; padding: 28px 20px; background: #07070a; color: #777782; border-top: 1px solid var(--border); font-size: 14px; }
 
 /* =========================================================
    RESPONSIVE
@@ -98,8 +104,10 @@ footer { margin-top: 56px; padding: 28px 20px; background: #07070a; color: #7777
 @media (max-width: 768px) {
     .home-header,
     .project-header { padding: 44px 18px 28px; }
-    .home-header { padding: 34px 18px 24px; }
-    .games { padding: 40px 0; }
+    .home-header { padding: 18px 16px 16px; }
+    .home-header .logo { width: 250px; max-width: 78vw; }
+    .home-header p { font-size: 14px; }
+    .games { padding: 36px 0 44px; }
     .game img { width: 100%; height: auto; max-height: none; object-fit: contain; }
     .project { padding: 34px 15px 10px; }
     .confidentialite { width: calc(100% - 30px); padding: 26px 22px; }
