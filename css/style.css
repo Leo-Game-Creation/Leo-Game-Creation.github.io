@@ -24,11 +24,12 @@ img { display: block; max-width: 100%; }
 
 .home-header,
 .project-header { padding: 56px 20px 34px; background: radial-gradient(circle at top, #20203a 0%, #12121d 45%, #0b0b10 100%); border-bottom: 1px solid var(--border); }
+.home-header { padding: 42px 20px 28px; }
 .home-header h1,
 .project-header h1 { color: var(--text); font-size: clamp(28px, 4vw, 40px); line-height: 1.15; margin-bottom: 10px; text-shadow: 0 0 22px rgba(255, 152, 0, 0.22); }
 .home-header p,
 .project-header p { color: var(--muted); font-size: 16px; }
-.logo { width: 180px; max-width: 70vw; margin: 0 auto 20px; }
+.logo { width: 180px; max-width: 70vw; margin: 0 auto 16px; }
 
 /* =========================================================
    PROJECTS
@@ -97,6 +98,7 @@ footer { margin-top: 56px; padding: 28px 20px; background: #07070a; color: #7777
 @media (max-width: 768px) {
     .home-header,
     .project-header { padding: 44px 18px 28px; }
+    .home-header { padding: 34px 18px 24px; }
     .games { padding: 40px 0; }
     .game img { width: 100%; height: auto; max-height: none; object-fit: contain; }
     .project { padding: 34px 15px 10px; }
