@@ -77,18 +77,21 @@ img {
 }
 
 /* =========================================================
-   GAMES
+   PROJECTS
    ========================================================= */
 .games {
-    width: min(1120px, calc(100% - 40px));
+    width: min(1280px, calc(100% - 40px));
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
     padding: 56px 0;
+    align-items: stretch;
 }
 
 .game {
+    display: flex;
+    flex-direction: column;
     background: linear-gradient(180deg, var(--surface-2), var(--surface));
     padding: 20px;
     border: 1px solid var(--border);
@@ -106,8 +109,11 @@ img {
 
 .game img {
     width: 100%;
-    aspect-ratio: 16 / 10;
-    object-fit: cover;
+    height: auto;
+    max-height: 360px;
+    object-fit: contain;
+    object-position: center;
+    background: #0b0b10;
     border-radius: 10px;
     margin-bottom: 18px;
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -123,6 +129,14 @@ img {
     color: var(--muted);
     font-size: 14px;
     margin-bottom: 14px;
+}
+
+.game .btn {
+    margin-top: auto;
+}
+
+.green {
+    color: var(--primary);
 }
 
 /* =========================================================
@@ -151,79 +165,6 @@ img {
     background: var(--primary-hover);
     transform: translateY(-2px);
     box-shadow: 0 8px 22px rgba(255, 152, 0, 0.22);
-}
-
-/* =========================================================
-   NEONEARN PROMO — même identité que le site principal
-   ========================================================= */
-.neon-section {
-    width: 100%;
-    margin: 8px 0 0;
-    padding: 64px 20px;
-    background: radial-gradient(circle at 80% 20%, rgba(255, 152, 0, 0.10), transparent 35%),
-                linear-gradient(135deg, #151526 0%, #101018 100%);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-}
-
-.neon-container {
-    width: min(1100px, 100%);
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-    align-items: center;
-    text-align: left;
-}
-
-.neon-content h2 {
-    font-size: clamp(30px, 4vw, 42px);
-    color: var(--text);
-    line-height: 1.1;
-    margin-bottom: 16px;
-    text-shadow: 0 0 22px rgba(255, 152, 0, 0.2);
-}
-
-.neon-content h2 .green {
-    color: var(--primary);
-}
-
-.neon-content p {
-    color: var(--muted);
-    line-height: 1.75;
-    margin-bottom: 22px;
-    font-size: 16px;
-}
-
-.neon-content ul {
-    list-style: none;
-    margin-bottom: 28px;
-}
-
-.neon-content ul li {
-    color: #c4c4cc;
-    padding: 7px 0 7px 28px;
-    position: relative;
-}
-
-.neon-content ul li::before {
-    content: "⚡";
-    position: absolute;
-    left: 0;
-    color: var(--primary);
-}
-
-.neon-image {
-    display: flex;
-    justify-content: center;
-}
-
-.neon-image img {
-    width: min(100%, 460px);
-    height: auto;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow), var(--glow);
 }
 
 /* =========================================================
@@ -372,6 +313,13 @@ footer {
 /* =========================================================
    RESPONSIVE
    ========================================================= */
+@media (max-width: 900px) {
+    .games {
+        grid-template-columns: 1fr;
+        width: min(100% - 30px, 560px);
+    }
+}
+
 @media (max-width: 768px) {
     .home-header,
     .project-header {
@@ -379,28 +327,11 @@ footer {
     }
 
     .games {
-        width: min(100% - 30px, 520px);
         padding: 40px 0;
     }
 
-    .neon-section {
-        padding: 44px 18px;
-    }
-
-    .neon-container {
-        grid-template-columns: 1fr;
-        gap: 34px;
-    }
-
-    .neon-content {
-        text-align: center;
-    }
-
-    .neon-content ul {
-        text-align: left;
-        max-width: 520px;
-        margin-left: auto;
-        margin-right: auto;
+    .game img {
+        max-height: none;
     }
 
     .project {
