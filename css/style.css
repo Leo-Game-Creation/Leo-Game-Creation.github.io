@@ -25,7 +25,7 @@ a { color: inherit; }
 img { display: block; max-width: 100%; }
 
 .home-header,
-.project-header { padding: 56px 20px 34px; background: radial-gradient(circle at 50% 20%, #25200f 0%, #14141b 42%, #08080b 100%); border-bottom: 1px solid var(--border); box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35); }
+.project-header { padding: 56px 20px 34px; background: #000000; border-bottom: 1px solid var(--border); box-shadow: 0 10px 40px rgba(0, 0, 0, 0.65); }
 .home-header { padding: 24px 20px 20px; }
 .home-header .logo { width: 300px; max-width: min(72vw, 300px); margin: 0 auto 2px; filter: drop-shadow(0 0 14px rgba(255, 152, 0, 0.34)); }
 .home-header p,
