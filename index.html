@@ -6,6 +6,37 @@
     <meta name="description" content="Leo Game Studio — développement de jeux indépendants et projets numériques.">
     <title>Leo Game Studio</title>
     <link rel="stylesheet" href="css/style.css?v=4">
+    <style>
+        /* Bandeau accueil plus compact */
+        .home-header {
+            padding: 24px 20px 18px !important;
+        }
+        .home-header .logo {
+            width: 150px !important;
+            margin-bottom: 8px !important;
+        }
+        .home-header h1 {
+            margin-bottom: 5px !important;
+            font-size: clamp(27px, 4vw, 36px) !important;
+        }
+        .home-header p {
+            font-size: 15px !important;
+        }
+        @media (max-width: 768px) {
+            .home-header {
+                padding: 20px 16px 14px !important;
+            }
+            .home-header .logo {
+                width: 130px !important;
+            }
+            .home-header h1 {
+                font-size: 28px !important;
+            }
+            .home-header p {
+                font-size: 14px !important;
+            }
+        }
+    </style>
 </head>
 <body>
 
