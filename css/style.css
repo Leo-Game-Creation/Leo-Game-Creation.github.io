@@ -16,338 +16,90 @@
     --radius: 14px;
 }
 
-/* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { min-height: 100vh; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); color: var(--text); text-align: center; line-height: 1.5; }
+a { color: inherit; }
+img { display: block; max-width: 100%; }
 
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    min-height: 100vh;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    text-align: center;
-    line-height: 1.5;
-}
-
-a {
-    color: inherit;
-}
-
-img {
-    display: block;
-    max-width: 100%;
-}
-
-/* =========================================================
-   HEADER
-   ========================================================= */
 .home-header,
-.project-header {
-    padding: 56px 20px 34px;
-    background: radial-gradient(circle at top, #20203a 0%, #12121d 45%, #0b0b10 100%);
-    border-bottom: 1px solid var(--border);
-}
-
+.project-header { padding: 56px 20px 34px; background: radial-gradient(circle at top, #20203a 0%, #12121d 45%, #0b0b10 100%); border-bottom: 1px solid var(--border); }
 .home-header h1,
-.project-header h1 {
-    color: var(--text);
-    font-size: clamp(28px, 4vw, 40px);
-    line-height: 1.15;
-    margin-bottom: 10px;
-    text-shadow: 0 0 22px rgba(255, 152, 0, 0.22);
-}
-
+.project-header h1 { color: var(--text); font-size: clamp(28px, 4vw, 40px); line-height: 1.15; margin-bottom: 10px; text-shadow: 0 0 22px rgba(255, 152, 0, 0.22); }
 .home-header p,
-.project-header p {
-    color: var(--muted);
-    font-size: 16px;
-}
-
-.logo {
-    width: 180px;
-    max-width: 70vw;
-    margin: 0 auto 20px;
-}
+.project-header p { color: var(--muted); font-size: 16px; }
+.logo { width: 180px; max-width: 70vw; margin: 0 auto 20px; }
 
 /* =========================================================
    PROJECTS
    ========================================================= */
-.games {
-    width: min(1280px, calc(100% - 40px));
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
-    padding: 56px 0;
-    align-items: stretch;
-}
-
-.game {
-    display: flex;
-    flex-direction: column;
-    background: linear-gradient(180deg, var(--surface-2), var(--surface));
-    padding: 20px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    overflow: hidden;
-    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-}
-
-.game:hover {
-    transform: translateY(-6px);
-    border-color: rgba(255, 152, 0, 0.6);
-    box-shadow: var(--shadow), var(--glow);
-}
-
-.game img {
-    width: 100%;
-    height: auto;
-    max-height: 360px;
-    object-fit: contain;
-    object-position: center;
-    background: #0b0b10;
-    border-radius: 10px;
-    margin-bottom: 18px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.game h2 {
-    color: var(--primary);
-    margin-bottom: 8px;
-    font-size: 21px;
-}
-
-.game p {
-    color: var(--muted);
-    font-size: 14px;
-    margin-bottom: 14px;
-}
-
-.game .btn {
-    margin-top: auto;
-}
-
-.green {
-    color: var(--primary);
-}
+.games { width: min(1280px, calc(100% - 40px)); margin: 0 auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; padding: 56px 0; align-items: stretch; }
+.game { display: flex; flex-direction: column; background: linear-gradient(180deg, var(--surface-2), var(--surface)); padding: 20px; border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease; }
+.game:hover { transform: translateY(-6px); border-color: rgba(255, 152, 0, 0.6); box-shadow: var(--shadow), var(--glow); }
+.game img { width: 100%; height: auto; object-fit: contain; object-position: center; background: #0b0b10; border-radius: 10px; margin-bottom: 18px; border: 1px solid rgba(255, 255, 255, 0.08); }
+.game h2 { color: var(--primary); margin-bottom: 8px; font-size: 21px; }
+.game p { color: var(--muted); font-size: 14px; margin-bottom: 14px; }
+.game .btn { margin-top: auto; }
+.green { color: var(--primary); }
 
 /* =========================================================
    BUTTONS
    ========================================================= */
 .btn,
-.neon-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    min-height: 44px;
-    padding: 11px 22px;
-    border: 1px solid transparent;
-    border-radius: 9px;
-    background: var(--primary);
-    color: #111;
-    text-decoration: none;
-    font-weight: 700;
-    cursor: pointer;
-    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
-}
-
+.neon-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 11px 22px; border: 1px solid transparent; border-radius: 9px; background: var(--primary); color: #111; text-decoration: none; font-weight: 700; cursor: pointer; transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease; }
 .btn:hover,
-.neon-btn:hover {
-    background: var(--primary-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 22px rgba(255, 152, 0, 0.22);
-}
+.neon-btn:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: 0 8px 22px rgba(255, 152, 0, 0.22); }
 
 /* =========================================================
    PROJECT PAGES
    ========================================================= */
-.project {
-    max-width: 1120px;
-    margin: 0 auto;
-    padding: 44px 20px 20px;
-    background: var(--bg);
-}
-
+.project { max-width: 1120px; margin: 0 auto; padding: 44px 20px 20px; background: var(--bg); }
 .project > img,
-.project img {
-    border-radius: 12px;
-    border: 1px solid var(--border);
-}
-
-.project > img {
-    width: 320px;
-    max-width: 90%;
-    margin: 0 auto 24px;
-}
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 18px;
-    margin-top: 24px;
-}
-
-.gallery img {
-    width: 100%;
-    border-radius: 10px;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.gallery img:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--glow);
-}
+.project img { border-radius: 12px; border: 1px solid var(--border); }
+.project > img { width: 320px; max-width: 90%; margin: 0 auto 24px; }
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 18px; margin-top: 24px; }
+.gallery img { width: 100%; border-radius: 10px; transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.gallery img:hover { transform: translateY(-3px); box-shadow: var(--glow); }
 
 /* BACK BUTTON */
-.back-fixed {
-    position: fixed;
-    top: 18px;
-    left: 18px;
-    z-index: 100;
-    display: inline-flex;
-    align-items: center;
-    min-height: 40px;
-    padding: 9px 16px;
-    background: rgba(18, 18, 26, 0.9);
-    color: var(--primary);
-    border: 1px solid var(--border);
-    border-radius: 9px;
-    backdrop-filter: blur(10px);
-    text-decoration: none;
-    font-weight: 700;
-    transition: background 0.2s ease, border-color 0.2s ease;
-}
-
-.back-fixed:hover {
-    background: var(--surface-2);
-    border-color: rgba(255, 152, 0, 0.65);
-}
+.back-fixed { position: fixed; top: 18px; left: 18px; z-index: 100; display: inline-flex; align-items: center; min-height: 40px; padding: 9px 16px; background: rgba(18, 18, 26, 0.9); color: var(--primary); border: 1px solid var(--border); border-radius: 9px; backdrop-filter: blur(10px); text-decoration: none; font-weight: 700; transition: background 0.2s ease, border-color 0.2s ease; }
+.back-fixed:hover { background: var(--surface-2); border-color: rgba(255, 152, 0, 0.65); }
 
 /* =========================================================
    PRIVACY
    ========================================================= */
-.confidentialite {
-    width: min(900px, calc(100% - 40px));
-    margin: 40px auto;
-    padding: 36px;
-    text-align: left;
-    line-height: 1.75;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-left: 3px solid var(--primary);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-}
-
-.confidentialite h2 {
-    margin-top: 34px;
-    margin-bottom: 10px;
-    color: var(--primary);
-    font-size: 22px;
-}
-
-.confidentialite h3 {
-    margin-top: 24px;
-    margin-bottom: 8px;
-    color: var(--primary-hover);
-    font-size: 18px;
-}
-
+.confidentialite { width: min(900px, calc(100% - 40px)); margin: 40px auto; padding: 36px; text-align: left; line-height: 1.75; background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--primary); border-radius: var(--radius); box-shadow: var(--shadow); }
+.confidentialite h2 { margin-top: 34px; margin-bottom: 10px; color: var(--primary); font-size: 22px; }
+.confidentialite h3 { margin-top: 24px; margin-bottom: 8px; color: var(--primary-hover); font-size: 18px; }
 .confidentialite p,
-.confidentialite ul li {
-    color: var(--muted);
-}
-
-.confidentialite p {
-    margin-bottom: 15px;
-}
-
-.confidentialite ul {
-    margin: 10px 0 0 20px;
-}
-
-.confidentialite ul li {
-    margin-bottom: 8px;
-}
-
+.confidentialite ul li { color: var(--muted); }
+.confidentialite p { margin-bottom: 15px; }
+.confidentialite ul { margin: 10px 0 0 20px; }
+.confidentialite ul li { margin-bottom: 8px; }
 .confidentialite a,
-footer a {
-    color: var(--primary);
-    text-decoration: none;
-}
-
+footer a { color: var(--primary); text-decoration: none; }
 .confidentialite a:hover,
-footer a:hover {
-    color: var(--primary-hover);
-    text-decoration: underline;
-}
-
-.confidentialite hr {
-    border: 0;
-    height: 1px;
-    background: var(--border);
-    margin: 28px 0;
-}
+footer a:hover { color: var(--primary-hover); text-decoration: underline; }
+.confidentialite hr { border: 0; height: 1px; background: var(--border); margin: 28px 0; }
 
 /* =========================================================
    FOOTER
    ========================================================= */
-footer {
-    margin-top: 56px;
-    padding: 28px 20px;
-    background: #07070a;
-    color: #777782;
-    border-top: 1px solid var(--border);
-    font-size: 14px;
-}
+footer { margin-top: 56px; padding: 28px 20px; background: #07070a; color: #777782; border-top: 1px solid var(--border); font-size: 14px; }
 
 /* =========================================================
    RESPONSIVE
    ========================================================= */
 @media (max-width: 900px) {
-    .games {
-        grid-template-columns: 1fr;
-        width: min(100% - 30px, 560px);
-    }
+    .games { grid-template-columns: 1fr; width: min(100% - 30px, 560px); }
 }
 
 @media (max-width: 768px) {
     .home-header,
-    .project-header {
-        padding: 44px 18px 28px;
-    }
-
-    .games {
-        padding: 40px 0;
-    }
-
-    .game img {
-        max-height: none;
-    }
-
-    .project {
-        padding: 34px 15px 10px;
-    }
-
-    .confidentialite {
-        width: calc(100% - 30px);
-        padding: 26px 22px;
-    }
-
-    .back-fixed {
-        top: 12px;
-        left: 12px;
-        min-height: 36px;
-        padding: 7px 12px;
-        font-size: 13px;
-    }
+    .project-header { padding: 44px 18px 28px; }
+    .games { padding: 40px 0; }
+    .game img { width: 100%; height: auto; max-height: none; object-fit: contain; }
+    .project { padding: 34px 15px 10px; }
+    .confidentialite { width: calc(100% - 30px); padding: 26px 22px; }
+    .back-fixed { top: 12px; left: 12px; min-height: 36px; padding: 7px 12px; font-size: 13px; }
 }
