@@ -2,8 +2,124 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brick Color Number</title>
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .brick-carousel-section {
+            width: min(900px, calc(100% - 40px));
+            margin: 40px auto;
+        }
+
+        .brick-carousel-container {
+            position: relative;
+            min-height: 560px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 24px;
+            background: linear-gradient(180deg, var(--surface-2), var(--surface));
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .brick-carousel-wrapper {
+            position: relative;
+            width: min(100%, 410px);
+        }
+
+        .brick-carousel-images {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            box-shadow: var(--glow);
+        }
+
+        .brick-carousel-images img {
+            width: 100%;
+            height: auto;
+            display: none;
+        }
+
+        .brick-carousel-images img.active {
+            display: block;
+            animation: brickFadeIn 0.35s ease-in-out;
+        }
+
+        @keyframes brickFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .brick-carousel-controls {
+            position: absolute;
+            bottom: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 9px;
+            z-index: 10;
+        }
+
+        .brick-carousel-dot {
+            width: 10px;
+            height: 10px;
+            padding: 0;
+            border-radius: 50%;
+            background: rgba(255, 152, 0, 0.25);
+            border: 1px solid var(--primary);
+            cursor: pointer;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .brick-carousel-dot.active {
+            background: var(--primary);
+            transform: scale(1.25);
+        }
+
+        .brick-carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 42px;
+            height: 42px;
+            padding: 0;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: rgba(18, 18, 26, 0.9);
+            border: 1px solid var(--border);
+            color: var(--primary);
+            cursor: pointer;
+            font-size: 18px;
+            transition: background 0.2s ease, box-shadow 0.2s ease;
+            z-index: 5;
+        }
+
+        .brick-carousel-nav:hover {
+            background: var(--surface-2);
+            box-shadow: var(--glow);
+        }
+
+        .brick-carousel-nav.prev { left: -20px; }
+        .brick-carousel-nav.next { right: -20px; }
+
+        @media (max-width: 768px) {
+            .brick-carousel-section {
+                width: min(100% - 30px, 560px);
+            }
+
+            .brick-carousel-container {
+                min-height: 420px;
+                padding: 18px;
+            }
+
+            .brick-carousel-nav.prev { left: 5px; }
+            .brick-carousel-nav.next { right: 5px; }
+        }
+    </style>
 </head>
 <body>
 
@@ -12,32 +128,70 @@
 <header class="project-header">
     <h1>Brick Color Number</h1>
 </header>
-    
+
 <div class="download-container">
-    <a href="https://play.google.com/store/apps/details?id=com.leogame.brickcolornumber" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-         alt="Disponible sur Google Play"
-         style="height:70px;">
-</a>
+    <a href="https://play.google.com/store/apps/details?id=com.leogame.brickcolornumber" target="_blank" rel="noopener noreferrer">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+             alt="Disponible sur Google Play"
+             style="height:70px;">
     </a>
 </div>
-    
+
 <section class="project">
-    <img src="../images/neon-menu.jpg" alt="Neon Breaker">
+    <section class="brick-carousel-section" aria-label="Aperçu de Brick Color Number">
+        <div class="brick-carousel-container">
+            <div class="brick-carousel-wrapper">
+                <div class="brick-carousel-images">
+                    <img src="../images/neon-menu.jpg" alt="Brick Color Number — menu" class="active">
+                    <img src="../images/neon-settings.jpg" alt="Brick Color Number — paramètres">
+                    <img src="../images/neon-game.jpg" alt="Brick Color Number — gameplay">
+                </div>
+
+                <button class="brick-carousel-nav prev" type="button" onclick="changeBrickSlide(-1)" aria-label="Image précédente">❮</button>
+                <button class="brick-carousel-nav next" type="button" onclick="changeBrickSlide(1)" aria-label="Image suivante">❯</button>
+
+                <div class="brick-carousel-controls" aria-label="Sélection de l'image">
+                    <button class="brick-carousel-dot active" type="button" onclick="goToBrickSlide(0)" aria-label="Image 1"></button>
+                    <button class="brick-carousel-dot" type="button" onclick="goToBrickSlide(1)" aria-label="Image 2"></button>
+                    <button class="brick-carousel-dot" type="button" onclick="goToBrickSlide(2)" aria-label="Image 3"></button>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <p>
         Brick color Number est un jeu d'arcade avec son style simple et épuré.
     </p>
-
-    <div class="gallery">
-        <img src="../images/neon-settings.jpg" alt="Settings">
-        <img src="../images/neon-game.jpg" alt="Gameplay">
-    </div>
 </section>
 
 <footer>
     © 2026 Leo Game
 </footer>
+
+<script>
+    let currentBrickSlide = 0;
+    const brickSlides = document.querySelectorAll('.brick-carousel-images img');
+    const brickDots = document.querySelectorAll('.brick-carousel-dot');
+
+    function showBrickSlide(index) {
+        brickSlides.forEach(slide => slide.classList.remove('active'));
+        brickDots.forEach(dot => dot.classList.remove('active'));
+        brickSlides[index].classList.add('active');
+        brickDots[index].classList.add('active');
+        currentBrickSlide = index;
+    }
+
+    function changeBrickSlide(direction) {
+        const newIndex = (currentBrickSlide + direction + brickSlides.length) % brickSlides.length;
+        showBrickSlide(newIndex);
+    }
+
+    function goToBrickSlide(index) {
+        showBrickSlide(index);
+    }
+
+    setInterval(() => changeBrickSlide(1), 5000);
+</script>
 
 </body>
 </html>
