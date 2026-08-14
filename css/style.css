@@ -3,24 +3,24 @@
    ========================================================= */
 
 :root {
-    --bg: #050506;
-    --surface: #101014;
-    --surface-2: #17171d;
+    --bg: #000000;
+    --surface: #000000;
+    --surface-2: #000000;
     --primary: #ff9800;
     --primary-hover: #ffb300;
     --gold: #ffd54a;
     --text: #ffffff;
     --muted: #a5a5b0;
     --border: rgba(255, 152, 0, 0.30);
-    --shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+    --shadow: 0 18px 45px rgba(0, 0, 0, 0.65);
     --glow: 0 0 28px rgba(255, 152, 0, 0.22);
     --radius: 14px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { min-height: 100vh; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); color: var(--text); text-align: center; line-height: 1.5; }
-body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: -1; background: radial-gradient(circle at 50% -10%, rgba(255, 152, 0, 0.10), transparent 38%), radial-gradient(circle at 50% 100%, rgba(255, 152, 0, 0.045), transparent 30%); }
+html { scroll-behavior: smooth; background: #000000; }
+body { min-height: 100vh; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background: #000000; color: var(--text); text-align: center; line-height: 1.5; }
+body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: -1; background: none; }
 a { color: inherit; }
 img { display: block; max-width: 100%; }
 
@@ -39,11 +39,11 @@ img { display: block; max-width: 100%; }
 /* =========================================================
    PROJECTS
    ========================================================= */
-.games { width: min(1280px, calc(100% - 40px)); margin: 0 auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; padding: 48px 0 56px; align-items: stretch; }
-.game { display: flex; flex-direction: column; background: linear-gradient(180deg, rgba(30, 29, 34, 0.98), rgba(12, 12, 16, 0.98)); padding: 20px; border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; position: relative; transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease; }
+.games { width: min(1280px, calc(100% - 40px)); margin: 0 auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; padding: 48px 0 56px; align-items: stretch; background: #000000; }
+.game { display: flex; flex-direction: column; background: #000000; padding: 20px; border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; position: relative; transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease; }
 .game::before { content: ""; position: absolute; top: 0; left: 12%; right: 12%; height: 2px; background: linear-gradient(90deg, transparent, var(--primary), transparent); opacity: 0.8; }
 .game:hover { transform: translateY(-6px); border-color: rgba(255, 152, 0, 0.68); box-shadow: var(--shadow), var(--glow); }
-.game img { width: 100%; height: auto; object-fit: contain; object-position: center; background: #08080b; border-radius: 10px; margin-bottom: 18px; border: 1px solid rgba(255, 255, 255, 0.08); }
+.game img { width: 100%; height: auto; object-fit: contain; object-position: center; background: #000000; border-radius: 10px; margin-bottom: 18px; border: 1px solid rgba(255, 255, 255, 0.08); }
 .game h2 { color: var(--primary); margin-bottom: 8px; font-size: 21px; text-shadow: 0 0 12px rgba(255, 152, 0, 0.15); }
 .game p { color: var(--muted); font-size: 14px; margin-bottom: 14px; }
 .game .btn { margin-top: auto; }
@@ -60,7 +60,7 @@ img { display: block; max-width: 100%; }
 /* =========================================================
    PROJECT PAGES
    ========================================================= */
-.project { max-width: 1120px; margin: 0 auto; padding: 44px 20px 20px; background: var(--bg); }
+.project { max-width: 1120px; margin: 0 auto; padding: 44px 20px 20px; background: #000000; }
 .project > img,
 .project img { border-radius: 12px; border: 1px solid var(--border); }
 .project > img { width: 320px; max-width: 90%; margin: 0 auto 24px; }
@@ -69,13 +69,13 @@ img { display: block; max-width: 100%; }
 .gallery img:hover { transform: translateY(-3px); box-shadow: var(--glow); }
 
 /* BACK BUTTON */
-.back-fixed { position: fixed; top: 18px; left: 18px; z-index: 100; display: inline-flex; align-items: center; min-height: 40px; padding: 9px 16px; background: rgba(18, 18, 26, 0.9); color: var(--primary); border: 1px solid var(--border); border-radius: 9px; backdrop-filter: blur(10px); text-decoration: none; font-weight: 700; transition: background 0.2s ease, border-color 0.2s ease; }
-.back-fixed:hover { background: var(--surface-2); border-color: rgba(255, 152, 0, 0.65); }
+.back-fixed { position: fixed; top: 18px; left: 18px; z-index: 100; display: inline-flex; align-items: center; min-height: 40px; padding: 9px 16px; background: #000000; color: var(--primary); border: 1px solid var(--border); border-radius: 9px; backdrop-filter: none; text-decoration: none; font-weight: 700; transition: background 0.2s ease, border-color 0.2s ease; }
+.back-fixed:hover { background: #000000; border-color: rgba(255, 152, 0, 0.65); }
 
 /* =========================================================
    PRIVACY
    ========================================================= */
-.confidentialite { width: min(900px, calc(100% - 40px)); margin: 40px auto; padding: 36px; text-align: left; line-height: 1.75; background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--primary); border-radius: var(--radius); box-shadow: var(--shadow); }
+.confidentialite { width: min(900px, calc(100% - 40px)); margin: 40px auto; padding: 36px; text-align: left; line-height: 1.75; background: #000000; border: 1px solid var(--border); border-left: 3px solid var(--primary); border-radius: var(--radius); box-shadow: var(--shadow); }
 .confidentialite h2 { margin-top: 34px; margin-bottom: 10px; color: var(--primary); font-size: 22px; }
 .confidentialite h3 { margin-top: 24px; margin-bottom: 8px; color: var(--primary-hover); font-size: 18px; }
 .confidentialite p,
@@ -92,7 +92,7 @@ footer a:hover { color: var(--primary-hover); text-decoration: underline; }
 /* =========================================================
    FOOTER
    ========================================================= */
-footer { margin-top: 0; padding: 28px 20px; background: #07070a; color: #777782; border-top: 1px solid var(--border); font-size: 14px; }
+footer { margin-top: 0; padding: 28px 20px; background: #000000; color: #777782; border-top: 1px solid var(--border); font-size: 14px; }
 
 /* =========================================================
    RESPONSIVE
