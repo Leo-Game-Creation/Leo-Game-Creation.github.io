@@ -22,6 +22,8 @@
         .hero p { max-width: 700px; margin: 0 auto 30px; color: var(--muted); font-size: 18px; }
         .cta-button, .sign-in-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 11px 24px; border: 0; border-radius: 9px; background: var(--primary); color: #111; font-weight: 800; cursor: pointer; transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease; }
         .cta-button:hover, .sign-in-btn:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: 0 8px 22px rgba(255, 152, 0, 0.22); }
+        .google-play-badge { display: block; width: 180px; height: auto; margin: 22px auto 0; transition: transform 0.2s ease, filter 0.2s ease; }
+        .google-play-badge:hover { transform: translateY(-2px); filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.35)); }
         .carousel-section { margin: 0 0 64px; }
         .carousel-container { position: relative; min-height: 560px; display: flex; justify-content: center; align-items: center; padding: 24px; background: linear-gradient(180deg, var(--surface-2), var(--surface)); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); }
         .carousel-wrapper { position: relative; width: min(100%, 410px); }
@@ -52,6 +54,7 @@
             .carousel-nav.prev { left: 5px; }
             .carousel-nav.next { right: 5px; }
             .features { grid-template-columns: 1fr; }
+            .google-play-badge { width: 160px; }
         }
     </style>
 </head>
@@ -73,6 +76,9 @@
             <h1>REGARDE. <span class="green">CLIQUE.</span> <span class="muted-word">ENCAISSE.</span></h1>
             <p>Gagnez des Léo Coins facilement en regardant des vidéos et en complétant des missions.</p>
             <button class="cta-button" type="button">BIENTÔT DISPONIBLE</button>
+            <a href="https://play.google.com/store/apps/details?id=com.neonearncash" target="_blank" rel="noopener noreferrer" aria-label="NeonEarn Cash sur Google Play">
+                <img class="google-play-badge" src="https://play.google.com/intl/fr_fr/badges/static/images/badges/fr_badge_web_generic.png" alt="Disponible sur Google Play">
+            </a>
         </section>
 
         <section class="carousel-section" aria-label="Aperçu de NeonEarn Cash">
