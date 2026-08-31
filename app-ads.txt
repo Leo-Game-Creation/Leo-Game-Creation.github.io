@@ -98,3 +98,75 @@ opera.com, pub6148735850944, RESELLER, 55a0c5fd61378de3
 rubiconproject.com, 25336, RESELLER, 0bfd66d529a55807
 ://unrulymedia.com, 848837292, RESELLER
 sharethrough.com, aeb4dhxw, RESELLER, d53b998a7bd4ecd2
+
+appads.in, 106246, REVENDEUR
+appnexus.com, 6849, REVENDEUR
+bid-matrix.com, f2c71a45ea149366, REVENDEUR
+bluexad.ai, 1996418805747683328, REVENDEUR
+brightcom.com, 23120, REVENDEUR
+connekt.ai, 5585919044, REVENDEUR
+conversantmedia.com, 41024, REVENDEUR, 03113cd04947736d
+Copper6.com, 766114, REVENDEUR
+dauup.com, 34222, REVENDEUR, 4daba13e2b0dfd9
+e-planning.net, 6a7f877127485fdb, REVENDEUR, c1ba615865ed87b2
+google.com, pub-2923085774557613, REVENDEUR, f08c47fec0942fa0
+google.com, pub-3990748024667386, REVENDEUR, f08c47fec0942fa0
+google.com, pub-5060663379040713, REVENDEUR, f08c47fec0942fa0
+ignitemediatech.com, pub_11115, REVENDEUR
+upgradeigital.com, 2297, REVENDEUR
+upgradeigtal.com, 2464, REVENDEUR
+indexexchange.com, 214183, REVENDEUR, 50b1c356f2c5c8fc
+insticator.com, cadff748-965f-4393-a76e-a8f902512bad, REVENDEUR, b3511ffcafb23a32
+kidoz.net, 14260, REVENDEUR, a109366414b7335e
+lijit.com, 528770, REVENDEUR, faff38b16bf6b2b
+loopme.com, 20775, REVENDEUR, 6c8d5f95897a5a3b
+lunamedia.io, 2fdb16a1-5025-4c41-9b17-e01e47ebc8b4, REVENDEUR, 524ecb396915caaf
+media.net, 8cuh46n56, REVENDEUR
+media.net, 8cusc3uj7, REVENDEUR
+netmarvel.com, 1011828, REVENDEUR, ca3509163a633862
+odeeo.io, 118848844, REVENDEUR, 36cfd73091d5c3fc
+ogury.com, 065d4ff5-a269-44be-9634-9d4d7af2dfc3, REVENDEUR
+onlinemediasolutions.com, 23120, REVENDEUR, b3868b187e4b6402
+openx.com, 562174952, REVENDEUR, 6a698e2ec38604c6
+openx.com, 563905670, REVENDEUR, 6a698e2ec38604c6
+openx.com, 565175463, REVENDEUR, 6a698e2ec38604c6
+pokkt.com, 6246, REVENDEUR, c45702d9311e25fd
+prado.co, 14260, REVENDEUR
+programmematicx.ai, 84448, REVENDEUR, b42d42eb28400efa
+pubmatic.com, 165750, REVENDEUR, 5d62403b186f2ace
+pubmatic.com, 165854, REVENDEUR, 5d62403b186f2ace
+pubmatic.com, 166335, REVENDEUR, 5d62403b186f2ace
+pubmatic.com, 95054, REVENDEUR, 5d62403b186f2ace
+rubiconproject.com, 15268, REVENDEUR, 0bfd66d529a55807
+rubiconproject.com, 17062, REVENDEUR, 0bfd66d529a55807
+rubiconproject.com, 20014, REVENDEUR, 0bfd66d529a55807
+rubiconproject.com, 27538, REVENDEUR, 0bfd66d529a55807
+rubiconproject.com, 28341, REVENDEUR, 0bfd66d529a55807
+sharethrough.com, 3713, REVENDEUR, d53b998a7bd4ecd2
+smaato.com, 1100047589, REVENDEUR, 07bcf65f187117b4
+smaato.com, 1100059563, REVENDEUR, 07bcf65f187117b4
+smartadserver.com, 4578, REVENDEUR, 060d053dcf45cbf3
+smartadserver.com, 4610, REVENDEUR, 060d053dcf45cbf3
+spinx.biz, 1373698903, REVENDEUR, 9f2711e9aaa9f992
+start.io, 197760873, REVENDEUR
+targetbetter.com, 82228, REVENDEUR
+taurusx.com, 70097, REVENDEUR
+themediagrid.com, b8n9yh, REVENDEUR, 35d5010d7789b49d
+themediagrid.com, falino, REVENDEUR, 9fac4a4a87c2a44f
+themediagrid.com, jvhg38, REVENDEUR, 9fac4a4a87c2a44f
+triplelift.com, 13883, REVENDEUR, 6c33edb13117fd86
+triplelift.com, 14716, REVENDEUR, 6c33edb13117fd86
+triplelift.com, 14798, REVENDEUR, 6c33edb13117fd86
+triplelift.com, 6998, REVENDEUR, 6c33edb13117fd86
+unite.com, 136376581, DIRECT, 96cabb5fbdde37a7
+vidazoo.com, 6a3384a48eca8f6ddad62520, REVENDEUR, b6ada874b4d7d0b2
+video.unrulymedia.com, 144138083, REVENDEUR
+video.unrulymedia.com, 201313863, REVENDEUR
+video.unrulymedia.com, 290726769, REVENDEUR
+video.unrulymedia.com, 389957698, REVENDEUR
+video.unrulymedia.com, 657436911, REVENDEUR
+video.unrulymedia.com, 703273072, REVENDEUR
+videoheroes.tv, 212499, REVENDEUR, 064bc41092443d8
+vidoomy.com, 8953515, REVENDEUR
+zetaglobal.net, 525, REVENDEUR
+zmaticoo.com, 5135195, REVENDEUR
