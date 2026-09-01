@@ -172,3 +172,10 @@ zetaglobal.net, 525, RESELLER
 lijit.com, 528770, RESELLER, fafdf38b16bf6b2b
 programmaticx.ai, 84448, RESELLER, b42d42eb28400efa
 triplelift.com, 14823, RESELLER, 6c33edb13117fd86
+video.unrulymedia.com, 144138083, RESELLER
+video.unrulymedia.com, 201313863, RESELLER
+video.unrulymedia.com, 290726769, RESELLER
+video.unrulymedia.com, 389957698, RESELLER
+video.unrulymedia.com, 657436911, RESELLER
+video.unrulymedia.com, 703273072, RESELLER
+zmaticoo.com, 5135195, RESELLER
