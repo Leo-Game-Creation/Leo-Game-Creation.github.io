@@ -73,21 +73,36 @@ img { display: block; max-width: 100%; }
 .back-fixed:hover { background: #000000; border-color: rgba(255, 152, 0, 0.65); }
 
 /* =========================================================
-   PRIVACY
+   PRIVACY / REGLEMENT
    ========================================================= */
-.confidentialite { width: min(900px, calc(100% - 40px)); margin: 40px auto; padding: 36px; text-align: left; line-height: 1.75; background: #000000; border: 1px solid var(--border); border-left: 3px solid var(--primary); border-radius: var(--radius); box-shadow: var(--shadow); }
-.confidentialite h2 { margin-top: 34px; margin-bottom: 10px; color: var(--primary); font-size: 22px; }
-.confidentialite h3 { margin-top: 24px; margin-bottom: 8px; color: var(--primary-hover); font-size: 18px; }
+.confidentialite { width: min(980px, calc(100% - 40px)); margin: 40px auto 56px; padding: 44px 46px; text-align: left; line-height: 1.75; background: linear-gradient(180deg, #080808 0%, #000000 100%); border: 1px solid var(--border); border-top: 2px solid rgba(255, 152, 0, 0.65); border-radius: var(--radius); box-shadow: var(--shadow); }
+.confidentialite h2 { margin-top: 34px; margin-bottom: 14px; padding-bottom: 8px; color: var(--primary); font-size: 23px; border-bottom: 1px solid rgba(255, 152, 0, 0.18); }
+.confidentialite h2:first-child { margin-top: 0; }
+.confidentialite h3 { margin-top: 38px; margin-bottom: 12px; padding: 12px 14px; color: var(--primary-hover); font-size: 19px; line-height: 1.35; background: rgba(255, 152, 0, 0.055); border-left: 3px solid var(--primary); border-radius: 0 8px 8px 0; scroll-margin-top: 24px; }
+.confidentialite h4 { margin-top: 22px; margin-bottom: 8px; color: #eeeeee; font-size: 16px; }
 .confidentialite p,
-.confidentialite ul li { color: var(--muted); }
+.confidentialite ul li,
+.confidentialite ol li { color: var(--muted); }
 .confidentialite p { margin-bottom: 15px; }
-.confidentialite ul { margin: 10px 0 0 20px; }
-.confidentialite ul li { margin-bottom: 8px; }
+.confidentialite strong { color: #eeeeee; }
+.confidentialite ul,
+.confidentialite ol { margin: 10px 0 18px 24px; }
+.confidentialite ul li,
+.confidentialite ol li { margin-bottom: 8px; padding-left: 3px; }
+.confidentialite > ol { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px 28px; margin: 14px 0 28px 24px; padding: 18px 20px 18px 38px; background: rgba(255, 152, 0, 0.035); border: 1px solid rgba(255, 152, 0, 0.15); border-radius: 10px; }
+.confidentialite > ol li { margin-bottom: 3px; }
+.confidentialite > ol a { color: #d8d8df; text-decoration: none; transition: color 0.2s ease; }
+.confidentialite > ol a:hover { color: var(--primary); }
 .confidentialite a,
 footer a { color: var(--primary); text-decoration: none; }
 .confidentialite a:hover,
 footer a:hover { color: var(--primary-hover); text-decoration: underline; }
-.confidentialite hr { border: 0; height: 1px; background: var(--border); margin: 28px 0; }
+.confidentialite hr { border: 0; height: 1px; background: var(--border); margin: 32px 0; }
+.confidentialite table { width: 100%; margin: 18px 0 24px; border-collapse: separate; border-spacing: 0; overflow: hidden; border: 1px solid rgba(255, 152, 0, 0.22); border-radius: 10px; background: rgba(255, 255, 255, 0.015); }
+.confidentialite th { padding: 13px 15px; color: #111; background: linear-gradient(135deg, #ff9800, #ffb300); font-weight: 800; text-align: left; }
+.confidentialite td { padding: 12px 15px; color: var(--muted); border-top: 1px solid rgba(255, 152, 0, 0.12); vertical-align: top; }
+.confidentialite tr:nth-child(even) td { background: rgba(255, 152, 0, 0.025); }
+.confidentialite code { padding: 2px 6px; border-radius: 5px; color: #f4c36a; background: rgba(255, 152, 0, 0.08); font-family: Consolas, monospace; font-size: 0.9em; }
 
 /* =========================================================
    FOOTER
@@ -99,6 +114,7 @@ footer { margin-top: 0; padding: 28px 20px; background: #000000; color: #777782;
    ========================================================= */
 @media (max-width: 900px) {
     .games { grid-template-columns: 1fr; width: min(100% - 30px, 560px); }
+    .confidentialite > ol { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
@@ -110,6 +126,16 @@ footer { margin-top: 0; padding: 28px 20px; background: #000000; color: #777782;
     .games { padding: 36px 0 44px; }
     .game img { width: 100%; height: auto; max-height: none; object-fit: contain; }
     .project { padding: 34px 15px 10px; }
-    .confidentialite { width: calc(100% - 30px); padding: 26px 22px; }
+    .confidentialite { width: calc(100% - 30px); padding: 28px 20px; margin-top: 28px; }
+    .confidentialite h3 { margin-top: 30px; font-size: 18px; }
+    .confidentialite table { display: block; overflow-x: auto; white-space: nowrap; }
+    .confidentialite th,
+    .confidentialite td { padding: 10px 12px; }
     .back-fixed { top: 12px; left: 12px; min-height: 36px; padding: 7px 12px; font-size: 13px; }
+}
+
+@media (max-width: 480px) {
+    .confidentialite { width: calc(100% - 20px); padding: 24px 16px; }
+    .confidentialite > ol { margin-left: 0; padding-left: 32px; }
+    .confidentialite h3 { padding: 10px 11px; }
 }
