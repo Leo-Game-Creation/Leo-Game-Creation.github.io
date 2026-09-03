@@ -100,6 +100,8 @@ unrulymedia.com, 848837292, RESELLER
 sharethrough.com, aeb4dhxw, RESELLER, d53b998a7bd4ecd2
 
 unity3d.com, 9072422910283, DIRECT, 24d73244243eb03a
+unity.com, 800106772, DIRECT
+unity.com, 800106741, DIRECT
 appads.in, 106246, RESELLER
 appnexus.com, 6849, RESELLER
 bid-matrix.com, f2c71a45ea149366, RESELLER
