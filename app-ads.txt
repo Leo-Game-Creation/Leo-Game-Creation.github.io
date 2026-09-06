@@ -43,7 +43,6 @@ media.net, 8CU675N41, RESELLER
 verve.com, 1008379, RESELLER, 0c8f5958fc2d6270
 bold-win.com, 1189, RESELLER, 71746737d0bab951
 sharethrough.com, SniqCOMC, RESELLER, d53b998a7bd4ecd2
-google.com, pub-1682595508078257, RESELLER, f08c47fec0942fa0
 lijit.com, 606973, RESELLER, fafdf38b16bf6b2b
 e-planning.net, 79ded3cfca3d3b78, RESELLER, c1ba615865ed87b2
 rubiconproject.com, 17328, RESELLER, 0bfd66d529a55807
