@@ -24,6 +24,11 @@ unity3d.com, 800106741, DIRECT
 vungle.com, 6a9b979d7a4c6baedc51c7ba, DIRECT, c107d686becd2d77
 
 
+# =========================================================
+# CONFIGURATION YANDEX ADS
+# =========================================================
+yango-ads.com, 330815117, DIRECT
+
 media.net, 8cuh2l333, RESELLER
 sharethrough.com, 3817, RESELLER, d53b998a7bd4ecd2
 playdigo.com, 1956, RESELLER
