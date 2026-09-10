@@ -440,3 +440,7 @@ video.unrulymedia.com, 657436911, RESELLER
 video.unrulymedia.com, 703273072, RESELLER
 video.unrulymedia.com, 947824792, RESELLER
 xandr.com, 13799, RESELLER
+google.com, pub-1682595508078257, RESELLER, f08c47fec0942fa0
+google.com, pub-2923085774557613, RESELLER, f08c47fec0942fa0
+google.com, pub-3990748024667386, RESELLER, f08c47fec0942fa0
+google.com, pub-5060663379040713, RESELLER, f08c47fec0942fa0
