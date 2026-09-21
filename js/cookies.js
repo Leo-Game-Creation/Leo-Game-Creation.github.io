@@ -1,5 +1,7 @@
 /**
  * Gestion du consentement cookies / RGPD — Leo Game Studio (leogamecreation.fr)
+ * Aligné CNIL : consentement préalable, refus aussi aisé que l’acceptation,
+ * pas de cases précochées, retrait possible, pas de traceur optionnel avant accord.
  *
  * API publique : window.LeoCookies
  *
@@ -15,6 +17,9 @@
  *
  * Ou déclarer un script inerte dans le HTML :
  *   <script type="text/plain" data-cookie-consent="analytics" src="..."></script>
+ *
+ * Après un retrait de consentement, la page est rechargée pour arrêter
+ * les scripts optionnels déjà injectés.
  */
 (function () {
     'use strict';
@@ -22,6 +27,8 @@
     var STORAGE_KEY = 'lgc_cookie_consent';
     var COOKIE_NAME = 'lgc_consent';
     var VERSION = 1;
+    /* Incrémentez VERSION si vous activez un vrai traceur ou changez de finalité :
+       le bandeau sera réaffiché (nouveau consentement CNIL). */
     var CONSENT_MAX_AGE_SECONDS = 60 * 60 * 24 * 183; // ~6 mois (recommandation CNIL)
 
     var CATEGORIES = ['analytics', 'marketing'];
@@ -51,6 +58,7 @@
             necessary: true,
             analytics: !!raw.analytics,
             marketing: !!raw.marketing,
+            method: raw.method || 'stored',
             timestamp: raw.timestamp || nowIso()
         };
     }
@@ -62,8 +70,9 @@
     }
 
     function writeCookie(name, value, maxAge) {
+        var secure = (location.protocol === 'https:') ? '; Secure' : '';
         document.cookie = name + '=' + encodeURIComponent(value) +
-            '; Path=/; Max-Age=' + maxAge + '; SameSite=Lax';
+            '; Path=/; Max-Age=' + maxAge + '; SameSite=Lax' + secure;
     }
 
     function loadStored() {
@@ -121,6 +130,25 @@
         return !!(consent && consent[category]);
     }
 
+    function snapshotConsent() {
+        if (!consent) {
+            return { necessary: true, analytics: false, marketing: false, timestamp: null, method: null };
+        }
+        return {
+            necessary: true,
+            analytics: !!consent.analytics,
+            marketing: !!consent.marketing,
+            timestamp: consent.timestamp,
+            method: consent.method || null
+        };
+    }
+
+    function notifyChange() {
+        try {
+            window.dispatchEvent(new CustomEvent('lgc:consent', { detail: snapshotConsent() }));
+        } catch (e) { /* IE / old engines */ }
+    }
+
     function emitAllowed() {
         CATEGORIES.forEach(function (category) {
             if (!hasConsent(category)) return;
@@ -148,34 +176,58 @@
         });
     }
 
-    function saveChoice(analytics, marketing) {
-        persist({
+    function optionalWasGranted(record) {
+        return !!(record && (record.analytics || record.marketing));
+    }
+
+    function optionalIsGranted(analytics, marketing) {
+        return !!(analytics || marketing);
+    }
+
+    function saveChoice(analytics, marketing, method) {
+        var previous = consent;
+        var next = {
             version: VERSION,
             necessary: true,
             analytics: !!analytics,
             marketing: !!marketing,
+            method: method || 'custom',
             timestamp: nowIso()
-        });
+        };
+        var withdrawing = optionalWasGranted(previous) && !optionalIsGranted(next.analytics, next.marketing);
+        var downgrading = previous && (
+            (previous.analytics && !next.analytics) ||
+            (previous.marketing && !next.marketing)
+        );
+
+        persist(next);
         hideBanner();
         closePreferences();
+        notifyChange();
+
+        if (withdrawing || downgrading) {
+            window.location.reload();
+            return;
+        }
         emitAllowed();
     }
 
     function acceptAll() {
-        saveChoice(true, true);
+        saveChoice(true, true, 'accept-all');
     }
 
     function refuseNonEssential() {
-        saveChoice(false, false);
+        saveChoice(false, false, 'refuse-all');
     }
 
     function runWhenAllowed(category, callback) {
         if (typeof callback !== 'function') return;
+        if (!listeners[category] && category !== 'necessary') return;
         if (hasConsent(category)) {
             callback();
             return;
         }
-        if (listeners[category]) listeners[category].push(callback);
+        listeners[category].push(callback);
     }
 
     function trapFocus(event) {
@@ -223,6 +275,8 @@
         var current = consent || { analytics: false, marketing: false };
         els.analytics.checked = !!current.analytics;
         els.marketing.checked = !!current.marketing;
+        els.analytics.setAttribute('aria-checked', els.analytics.checked ? 'true' : 'false');
+        els.marketing.setAttribute('aria-checked', els.marketing.checked ? 'true' : 'false');
     }
 
     function openPreferences(event) {
@@ -247,11 +301,13 @@
     }
 
     function saveFromPanel() {
-        saveChoice(els.analytics.checked, els.marketing.checked);
+        saveChoice(els.analytics.checked, els.marketing.checked, 'custom');
     }
 
     function buildUi() {
         if (document.getElementById('lgc-cookie-banner')) return;
+
+        var policy = privacyUrl();
 
         var banner = document.createElement('div');
         banner.id = 'lgc-cookie-banner';
@@ -266,15 +322,18 @@
                 '<div>' +
                     '<p class="lgc-cookie-banner__title" id="lgc-cookie-title">Cookies et confidentialité</p>' +
                     '<p class="lgc-cookie-banner__text" id="lgc-cookie-text">' +
-                        'Leo Game Studio utilise un cookie essentiel pour mémoriser vos choix. ' +
-                        'Les cookies optionnels (mesure d’audience, marketing) ne sont déposés qu’avec votre accord. ' +
-                        '<a href="' + privacyUrl() + '">Politique de confidentialité</a>.' +
+                        '<strong>LeoGame Création</strong> (leogamecreation.fr) dépose un cookie strictement nécessaire pour mémoriser vos choix. ' +
+                        'Les cookies optionnels de <strong>mesure d’audience</strong> et de <strong>marketing</strong> ne sont pas utilisés aujourd’hui ; ' +
+                        's’ils l’étaient, ils ne seraient déposés qu’après votre accord. ' +
+                        'Refuser n’empêche pas de consulter le site. Continuer à naviguer sans cliquer n’équivaut pas à un consentement. ' +
+                        '<a href="' + policy + '">Politique de confidentialité</a> — ' +
+                        '<a href="mailto:leo.games.creations@gmail.com">leo.games.creations@gmail.com</a>.' +
                     '</p>' +
                 '</div>' +
-                '<div class="lgc-cookie-actions">' +
-                    '<button type="button" class="lgc-cookie-btn lgc-cookie-btn--accept" data-lgc-action="accept">Tout accepter</button>' +
-                    '<button type="button" class="lgc-cookie-btn lgc-cookie-btn--refuse" data-lgc-action="refuse">Tout refuser</button>' +
-                    '<button type="button" class="lgc-cookie-btn lgc-cookie-btn--ghost" data-lgc-action="customize">Personnaliser</button>' +
+                '<div class="lgc-cookie-actions lgc-cookie-actions--first">' +
+                    '<button type="button" class="lgc-cookie-btn lgc-cookie-btn--choice lgc-cookie-btn--refuse" data-lgc-action="refuse">Tout refuser</button>' +
+                    '<button type="button" class="lgc-cookie-btn lgc-cookie-btn--choice lgc-cookie-btn--accept" data-lgc-action="accept">Tout accepter</button>' +
+                    '<button type="button" class="lgc-cookie-btn lgc-cookie-btn--ghost lgc-cookie-btn--customize" data-lgc-action="customize">Personnaliser</button>' +
                 '</div>' +
             '</div>';
 
@@ -292,37 +351,42 @@
         modal.tabIndex = -1;
         modal.hidden = true;
         modal.innerHTML =
-            '<button type="button" class="lgc-cookie-close" data-lgc-action="close" aria-label="Fermer">×</button>' +
+            '<button type="button" class="lgc-cookie-close" data-lgc-action="close" aria-label="Fermer sans enregistrer">×</button>' +
             '<h2 class="lgc-cookie-modal__title" id="lgc-cookie-modal-title">Vos préférences cookies</h2>' +
-            '<p class="lgc-cookie-modal__intro">Les cookies essentiels sont nécessaires au fonctionnement du site. Les autres catégories restent désactivées tant que vous ne les acceptez pas.</p>' +
+            '<p class="lgc-cookie-modal__intro">' +
+                'Responsable : <strong>LeoGame Création</strong>. ' +
+                'Aucune case optionnelle n’est précochée. ' +
+                'Vous pouvez accepter, refuser ou retirer votre consentement à tout moment. ' +
+                '<a href="' + policy + '">Lire la politique de confidentialité</a>.' +
+            '</p>' +
             '<div class="lgc-cookie-choice">' +
                 '<p class="lgc-cookie-choice__label" id="lgc-necessary-label">Cookies essentiels</p>' +
                 '<label class="lgc-cookie-switch">' +
-                    '<input type="checkbox" checked disabled aria-labelledby="lgc-necessary-label">' +
+                    '<input type="checkbox" checked disabled tabindex="-1" aria-labelledby="lgc-necessary-label" aria-describedby="lgc-necessary-desc">' +
                     '<span class="lgc-cookie-switch__ui" aria-hidden="true"></span>' +
                 '</label>' +
-                '<p class="lgc-cookie-choice__desc">Mémorisation de vos choix de consentement. Toujours actifs, ils ne nécessitent pas de consentement.</p>' +
+                '<p class="lgc-cookie-choice__desc" id="lgc-necessary-desc">Finalité : mémoriser vos choix de confidentialité. Base : strictement nécessaire au service (pas de consentement requis). Durée : 6 mois.</p>' +
             '</div>' +
             '<div class="lgc-cookie-choice">' +
                 '<p class="lgc-cookie-choice__label" id="lgc-analytics-label">Mesure d’audience</p>' +
                 '<label class="lgc-cookie-switch">' +
-                    '<input type="checkbox" id="lgc-consent-analytics" aria-labelledby="lgc-analytics-label">' +
+                    '<input type="checkbox" id="lgc-consent-analytics" role="switch" autocomplete="off" aria-checked="false" aria-labelledby="lgc-analytics-label" aria-describedby="lgc-analytics-desc">' +
                     '<span class="lgc-cookie-switch__ui" aria-hidden="true"></span>' +
                 '</label>' +
-                '<p class="lgc-cookie-choice__desc">Statistiques de fréquentation (ex. Google Analytics), uniquement si un outil est configuré plus tard. Aucun traceur n’est chargé sans votre accord.</p>' +
+                '<p class="lgc-cookie-choice__desc" id="lgc-analytics-desc">Finalité : statistiques de fréquentation (ex. Google Analytics), uniquement si un outil est configuré plus tard. Aucun partenaire n’est actif aujourd’hui. Désactivé par défaut.</p>' +
             '</div>' +
             '<div class="lgc-cookie-choice">' +
                 '<p class="lgc-cookie-choice__label" id="lgc-marketing-label">Marketing / publicité</p>' +
                 '<label class="lgc-cookie-switch">' +
-                    '<input type="checkbox" id="lgc-consent-marketing" aria-labelledby="lgc-marketing-label">' +
+                    '<input type="checkbox" id="lgc-consent-marketing" role="switch" autocomplete="off" aria-checked="false" aria-labelledby="lgc-marketing-label" aria-describedby="lgc-marketing-desc">' +
                     '<span class="lgc-cookie-switch__ui" aria-hidden="true"></span>' +
                 '</label>' +
-                '<p class="lgc-cookie-choice__desc">Publicités ou pixels partenaires sur le site. Aucun cookie marketing n’est déposé aujourd’hui sans activation explicite.</p>' +
+                '<p class="lgc-cookie-choice__desc" id="lgc-marketing-desc">Finalité : publicités ou pixels partenaires sur le site. Aucun cookie marketing n’est déposé aujourd’hui. Désactivé par défaut.</p>' +
             '</div>' +
             '<div class="lgc-cookie-modal__actions">' +
-                '<button type="button" class="lgc-cookie-btn lgc-cookie-btn--accept" data-lgc-action="save">Enregistrer mes choix</button>' +
-                '<button type="button" class="lgc-cookie-btn lgc-cookie-btn--refuse" data-lgc-action="refuse">Tout refuser</button>' +
-                '<button type="button" class="lgc-cookie-btn lgc-cookie-btn--ghost" data-lgc-action="accept">Tout accepter</button>' +
+                '<button type="button" class="lgc-cookie-btn lgc-cookie-btn--choice lgc-cookie-btn--refuse" data-lgc-action="refuse">Tout refuser</button>' +
+                '<button type="button" class="lgc-cookie-btn lgc-cookie-btn--choice lgc-cookie-btn--accept" data-lgc-action="accept">Tout accepter</button>' +
+                '<button type="button" class="lgc-cookie-btn lgc-cookie-btn--ghost lgc-cookie-btn--customize" data-lgc-action="save">Enregistrer mes choix</button>' +
             '</div>';
 
         document.body.appendChild(overlay);
@@ -334,6 +398,14 @@
         els.modal = modal;
         els.analytics = document.getElementById('lgc-consent-analytics');
         els.marketing = document.getElementById('lgc-consent-marketing');
+        els.analytics.checked = false;
+        els.marketing.checked = false;
+
+        function onToggleChange(input) {
+            input.setAttribute('aria-checked', input.checked ? 'true' : 'false');
+        }
+        els.analytics.addEventListener('change', function () { onToggleChange(els.analytics); });
+        els.marketing.addEventListener('change', function () { onToggleChange(els.marketing); });
 
         document.body.addEventListener('click', function (event) {
             var actionEl = event.target.closest('[data-lgc-action]');
@@ -360,23 +432,20 @@
         } else {
             emitAllowed();
         }
+        syncToggles();
     }
 
     window.LeoCookies = {
         getConsent: function () {
-            return consent ? {
-                necessary: true,
-                analytics: !!consent.analytics,
-                marketing: !!consent.marketing,
-                timestamp: consent.timestamp
-            } : null;
+            return consent ? snapshotConsent() : null;
         },
         hasConsent: hasConsent,
         runWhenAllowed: runWhenAllowed,
         onConsent: runWhenAllowed,
         openPreferences: openPreferences,
         acceptAll: acceptAll,
-        refuseNonEssential: refuseNonEssential
+        refuseNonEssential: refuseNonEssential,
+        withdrawConsent: refuseNonEssential
     };
 
     if (document.readyState === 'loading') {

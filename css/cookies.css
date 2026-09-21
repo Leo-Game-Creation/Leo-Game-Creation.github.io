@@ -84,7 +84,18 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    align-items: center;
+    align-items: stretch;
+}
+
+.lgc-cookie-actions--first,
+.lgc-cookie-modal__actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.lgc-cookie-btn--customize {
+    grid-column: 1 / -1;
 }
 
 .lgc-cookie-btn {
@@ -94,11 +105,19 @@
     min-height: 44px;
     padding: 10px 18px;
     border-radius: 9px;
-    font-size: 14px;
+    border-width: 2px;
+    border-style: solid;
+    font-size: 15px;
     font-weight: 800;
+    line-height: 1.2;
     cursor: pointer;
     text-decoration: none;
     transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.lgc-cookie-btn--choice {
+    width: 100%;
+    min-height: 48px;
 }
 
 .lgc-cookie-btn:focus-visible {
@@ -115,7 +134,7 @@
 }
 
 .lgc-cookie-btn--accept {
-    border: 1px solid rgba(255, 213, 74, 0.35);
+    border-color: #ff9800;
     background: linear-gradient(135deg, #ff8f00, #ffb300);
     color: #111111;
 }
@@ -126,18 +145,19 @@
 }
 
 .lgc-cookie-btn--refuse {
-    border: 1px solid rgba(255, 152, 0, 0.55);
-    background: #000000;
-    color: #ffb300;
+    border-color: #ff9800;
+    background: #111111;
+    color: #ffcc80;
 }
 
 .lgc-cookie-btn--refuse:hover {
-    border-color: #ffb300;
-    background: rgba(255, 152, 0, 0.08);
+    border-color: #ffd54a;
+    background: #1a1208;
+    color: #ffd54a;
 }
 
 .lgc-cookie-btn--ghost {
-    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-color: rgba(255, 255, 255, 0.28);
     background: transparent;
     color: #eeeeee;
 }
@@ -275,10 +295,19 @@
     opacity: 0.7;
 }
 
+.lgc-cookie-modal__intro a {
+    color: #ffb300;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.lgc-cookie-modal__intro a:hover,
+.lgc-cookie-modal__intro a:focus-visible {
+    color: #ffd54a;
+}
+
 .lgc-cookie-modal__actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
     margin-top: 18px;
 }
 
@@ -327,8 +356,15 @@ a.js-open-cookie-settings {
         padding: 16px;
     }
 
-    .lgc-cookie-btn {
+    .lgc-cookie-actions--first,
+    .lgc-cookie-modal__actions {
+        grid-template-columns: 1fr;
+    }
+
+    .lgc-cookie-btn,
+    .lgc-cookie-btn--customize {
         width: 100%;
+        grid-column: auto;
     }
 
     .lgc-cookie-modal {
