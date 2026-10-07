@@ -167,6 +167,8 @@ footer { margin-top: 0; padding: 28px 20px; background: #000000; color: #777782;
 .page-contact input:not([type="hidden"]):focus,
 .page-contact textarea:focus { outline: 2px solid rgba(255, 152, 0, 0.55); outline-offset: 1px; }
 .page-contact button.btn { width: 100%; margin-top: 4px; font: inherit; font-weight: 800; }
+.page-contact button.btn:disabled { opacity: 0.72; cursor: wait; }
+.page-contact .contact-error { margin-top: 14px; padding: 12px 14px; text-align: left; color: var(--gold); background: rgba(255, 152, 0, 0.08); border: 1px solid var(--border); border-radius: 9px; }
 
 @media (max-width: 480px) {
     .page-contact .container,
