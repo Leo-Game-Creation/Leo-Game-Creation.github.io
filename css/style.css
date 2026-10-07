@@ -27,7 +27,7 @@ img { display: block; max-width: 100%; }
 .home-header,
 .project-header { padding: 56px 20px 34px; background: #000000; border-bottom: 1px solid var(--border); box-shadow: 0 10px 40px rgba(0, 0, 0, 0.65); }
 .home-header { padding: 24px 20px 20px; }
-.home-header .logo { width: 300px; max-width: min(72vw, 300px); margin: 0 auto 2px; filter: drop-shadow(0 0 14px rgba(255, 152, 0, 0.34)); }
+.home-header .logo { width: 180px; max-width: min(50vw, 180px); margin: 0 auto 2px; filter: drop-shadow(0 0 14px rgba(255, 152, 0, 0.34)); }
 .home-header p,
 .project-header p { color: #c0c0c8; font-size: 16px; letter-spacing: 0.02em; }
 .home-header p::before,
@@ -121,7 +121,7 @@ footer { margin-top: 0; padding: 28px 20px; background: #000000; color: #777782;
     .home-header,
     .project-header { padding: 44px 18px 28px; }
     .home-header { padding: 18px 16px 16px; }
-    .home-header .logo { width: 250px; max-width: 78vw; }
+    .home-header .logo { width: 140px; max-width: 50vw; }
     .home-header p { font-size: 14px; }
     .games { padding: 36px 0 44px; }
     .game img { width: 100%; height: auto; max-height: none; object-fit: contain; }
