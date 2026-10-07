@@ -7,13 +7,13 @@
     <title>Contact | Leo Game Studio</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/cookies.css">
     <script src="js/cookies.js" defer></script>
 </head>
 
 
-<body>
+<body class="page-contact">
 
     <!-- ===== NAVBAR ===== -->
     <nav class="navbar">
@@ -34,15 +34,24 @@
 
         <form action="https://formspree.io/f/xpqjqrkv" method="POST">
 
-            <input type="hidden" name="_next" value="merci.html">
+            <input type="hidden" name="_next" value="https://leogamecreation.fr/merci.html">
 
-            <input type="text" name="name" placeholder="Ton nom" required>
+            <label>
+                Nom
+                <input type="text" name="name" placeholder="Ton nom" autocomplete="name" required>
+            </label>
 
-            <input type="email" name="email" placeholder="Ton email" required>
+            <label>
+                E-mail
+                <input type="email" name="email" placeholder="Ton email" autocomplete="email" required>
+            </label>
 
-            <textarea name="message" placeholder="Ton message..." required></textarea>
+            <label>
+                Message
+                <textarea name="message" placeholder="Ton message..." required></textarea>
+            </label>
 
-            <button type="submit">Envoyer</button>
+            <button type="submit" class="btn">Envoyer</button>
 
         </form>
 
