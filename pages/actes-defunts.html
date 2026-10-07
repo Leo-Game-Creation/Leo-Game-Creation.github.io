@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Actes Défunts — application LeoGame Création en cours de finalisation.">
+    <title>Actes Défunts | LeoGame Création</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/cookies.css">
+    <script src="../js/cookies.js" defer></script>
+    <style>
+        .factory-note {
+            width: min(760px, calc(100% - 40px));
+            margin: 28px auto 0;
+            padding: 14px 18px;
+            color: var(--gold);
+            font-size: 14px;
+            line-height: 1.55;
+            background: rgba(255, 152, 0, 0.06);
+            border: 1px dashed rgba(255, 213, 74, 0.45);
+            border-radius: var(--radius);
+        }
+
+        .factory-card .factory-kicker {
+            margin-bottom: 12px;
+            color: var(--gold);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .factory-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            aspect-ratio: 16 / 10;
+            margin-bottom: 18px;
+            padding: 12px;
+            color: var(--muted);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            background: linear-gradient(180deg, rgba(255, 152, 0, 0.1), rgba(255, 152, 0, 0.03));
+            border: 1px dashed rgba(255, 152, 0, 0.5);
+            border-radius: 10px;
+        }
+
+        .factory-card .factory-badge {
+            align-self: center;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 28px;
+            margin-bottom: 12px;
+            padding: 4px 12px;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .factory-card .factory-badge--idee {
+            color: #d8d8e0;
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.28);
+        }
+
+        .factory-card .factory-badge--prototype {
+            color: var(--gold);
+            background: rgba(255, 213, 74, 0.1);
+            border-color: rgba(255, 213, 74, 0.5);
+        }
+
+        .factory-card .factory-badge--dev {
+            color: #111111;
+            background: linear-gradient(135deg, #ff8f00, #ffb300);
+            border-color: rgba(255, 213, 74, 0.35);
+        }
+
+        .factory-card .factory-badge--beta {
+            color: var(--primary);
+            background: rgba(255, 152, 0, 0.14);
+            border-color: rgba(255, 152, 0, 0.75);
+        }
+
+        .factory-progress {
+            margin: 2px 0 16px;
+        }
+
+        .factory-progress__label {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 6px;
+            color: var(--muted);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .factory-progress__track {
+            height: 8px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 152, 0, 0.28);
+            border-radius: 999px;
+        }
+
+        .factory-progress__bar {
+            height: 100%;
+            background: linear-gradient(90deg, #ff8f00, #ffd54a);
+            border-radius: inherit;
+        }
+
+        .factory-card .btn[disabled] {
+            margin-top: auto;
+            opacity: 0.85;
+            color: #111111;
+            background: linear-gradient(135deg, #ff8f00, #ffb300);
+            cursor: not-allowed;
+        }
+
+        @media (max-width: 768px) {
+            .project-header { padding-top: 72px; }
+        }
+    </style>
+</head>
+<body>
+
+<a href="../index.html" class="back-fixed">← Accueil</a>
+
+<header class="project-header">
+    <h1>Actes Défunts</h1>
+    <p>Application en cours de finalisation.</p>
+</header>
+
+<main>
+    <p class="factory-note">Ces cartes sont des modèles vides, intitulés « Écran à venir ». Elles ne décrivent aucun contenu réel.</p>
+
+    <!--
+      Ajouter une carte : dupliquer un bloc article.game.factory-card,
+      puis remplacer le titre, le résumé, l'emplacement image, le badge et la barre.
+      Pour l'image, remplacer le bloc div.factory-placeholder par une balise img
+      avec src et alt. Exemple : img src="apercu.png" alt="Aperçu à venir".
+      Statuts : Idée, Prototype, En développement, Bêta.
+      Classe du badge : factory-badge, puis deux tirets, puis idee, prototype, dev ou beta.
+      Aligner le pourcentage affiché, aria-valuenow et la largeur de la barre (factory-progress__bar).
+      Quand la fiche existe, remplacer le bouton désactivé par un lien :
+      a.btn href="ma-page.html" Voir.
+      Retirer ou remplacer ces modèles avant publication.
+    -->
+    <section class="games" aria-label="Modèles d'écrans">
+        <article class="game factory-card">
+            <p class="factory-kicker">Modèle</p>
+            <div class="factory-placeholder" role="img" aria-label="Aperçu à venir">Aperçu à venir</div>
+            <p class="factory-badge factory-badge--idee">Idée</p>
+            <h2>Écran à venir</h2>
+            <p>Résumé à rédiger lorsque cet écran sera ajouté.</p>
+            <div class="factory-progress">
+                <div class="factory-progress__label">
+                    <span>Avancement</span>
+                    <span>10 %</span>
+                </div>
+                <div class="factory-progress__track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="10" aria-label="Avancement du modèle, idée">
+                    <div class="factory-progress__bar" style="width: 10%"></div>
+                </div>
+            </div>
+            <button type="button" class="btn" disabled>Fiche à venir</button>
+        </article>
+
+        <article class="game factory-card">
+            <p class="factory-kicker">Modèle</p>
+            <div class="factory-placeholder" role="img" aria-label="Aperçu à venir">Aperçu à venir</div>
+            <p class="factory-badge factory-badge--prototype">Prototype</p>
+            <h2>Écran à venir</h2>
+            <p>Résumé à rédiger lorsque cet écran sera ajouté.</p>
+            <div class="factory-progress">
+                <div class="factory-progress__label">
+                    <span>Avancement</span>
+                    <span>40 %</span>
+                </div>
+                <div class="factory-progress__track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="40" aria-label="Avancement du modèle, prototype">
+                    <div class="factory-progress__bar" style="width: 40%"></div>
+                </div>
+            </div>
+            <button type="button" class="btn" disabled>Fiche à venir</button>
+        </article>
+
+        <article class="game factory-card">
+            <p class="factory-kicker">Modèle</p>
+            <div class="factory-placeholder" role="img" aria-label="Aperçu à venir">Aperçu à venir</div>
+            <p class="factory-badge factory-badge--dev">En développement</p>
+            <h2>Écran à venir</h2>
+            <p>Résumé à rédiger lorsque cet écran sera ajouté.</p>
+            <div class="factory-progress">
+                <div class="factory-progress__label">
+                    <span>Avancement</span>
+                    <span>75 %</span>
+                </div>
+                <div class="factory-progress__track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="75" aria-label="Avancement du modèle, en développement">
+                    <div class="factory-progress__bar" style="width: 75%"></div>
+                </div>
+            </div>
+            <button type="button" class="btn" disabled>Fiche à venir</button>
+        </article>
+    </section>
+</main>
+
+<footer>
+    © 2026 LeoGame Création — Tous droits réservés —
+    <a href="../confidentialite.html">Politique de confidentialité</a> —
+    <a href="confidentialite-leogame-factory.html">Confidentialité LeoGame Factory</a> —
+    <a href="#gestion-cookies" class="js-open-cookie-settings">Gérer les cookies</a>
+</footer>
+
+</body>
+</html>
