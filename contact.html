@@ -1,67 +1,63 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact | Leo Game Studio</title>
-
-    <!-- CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contacte LeoGame Création : une question, un bug ou une idée de jeu.">
+    <title>Contact | LeoGame Création</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/cookies.css">
     <script src="js/cookies.js" defer></script>
 </head>
-
-
 <body class="page-contact">
 
-    <!-- ===== NAVBAR ===== -->
-    <nav class="navbar">
+<header class="home-header">
+    <img src="assets/leo-game-logo.webp" alt="Leo Game" class="logo">
+    <p>Développement de jeux indépendants</p>
+    <nav class="navbar" aria-label="Navigation">
         <div class="nav-container">
             <div class="nav-links">
                 <a href="index.html">Accueil</a>
                 <a href="index.html#games">Jeux</a>
-                <a href="contact.html">Contact</a>
+                <a href="contact.html" aria-current="page">Contact</a>
             </div>
         </div>
     </nav>
+</header>
 
+<main class="container">
+    <h1>Contact</h1>
+    <p class="contact-intro">Une question, un bug, une idée de jeu ? Écris-moi.</p>
 
-    <!-- ===== FORMULAIRE ===== -->
-    <div class="container">
+    <form action="https://formspree.io/f/xpqjqrkv" method="POST">
 
-        <h1>📩 Contact</h1>
+        <input type="hidden" name="_next" value="https://leogamecreation.fr/merci.html">
 
-        <form action="https://formspree.io/f/xpqjqrkv" method="POST">
+        <label>
+            Nom
+            <input type="text" name="name" placeholder="Ton nom" autocomplete="name" required>
+        </label>
 
-            <input type="hidden" name="_next" value="https://leogamecreation.fr/merci.html">
+        <label>
+            E-mail
+            <input type="email" name="email" placeholder="Ton email" autocomplete="email" required>
+        </label>
 
-            <label>
-                Nom
-                <input type="text" name="name" placeholder="Ton nom" autocomplete="name" required>
-            </label>
+        <label>
+            Message
+            <textarea name="message" placeholder="Ton message..." required></textarea>
+        </label>
 
-            <label>
-                E-mail
-                <input type="email" name="email" placeholder="Ton email" autocomplete="email" required>
-            </label>
+        <button type="submit" class="btn">Envoyer</button>
 
-            <label>
-                Message
-                <textarea name="message" placeholder="Ton message..." required></textarea>
-            </label>
+    </form>
+</main>
 
-            <button type="submit" class="btn">Envoyer</button>
-
-        </form>
-
-    </div>
-
-    <footer>
-        © 2026 LeoGame Création —
-        <a href="confidentialite.html">Politique de confidentialité</a> —
-        <a href="#gestion-cookies" class="js-open-cookie-settings">Gérer les cookies</a>
-    </footer>
+<footer>
+    © 2026 LeoGame Création —
+    <a href="confidentialite.html">Politique de confidentialité</a> —
+    <a href="#gestion-cookies" class="js-open-cookie-settings">Gérer les cookies</a>
+</footer>
 
 </body>
 </html>

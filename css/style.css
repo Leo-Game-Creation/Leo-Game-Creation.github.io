@@ -151,8 +151,13 @@ footer { margin-top: 0; padding: 28px 20px; background: #000000; color: #777782;
 .nav-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 22px; }
 .nav-links a { color: var(--text); text-decoration: none; font-weight: 700; }
 .nav-links a:hover { color: var(--primary); }
+.page-contact .home-header { padding-bottom: 14px; }
+.page-contact .home-header .navbar { margin-top: 14px; padding: 0; background: transparent; border-bottom: 0; }
+.page-contact .nav-links a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 2px; }
+.page-contact .nav-links a[aria-current="page"] { color: var(--primary); }
 .page-contact h1,
 .page-thanks h1 { margin-bottom: 12px; font-size: clamp(28px, 4vw, 40px); line-height: 1.15; text-shadow: 0 0 22px rgba(255, 152, 0, 0.22); }
+.page-contact .contact-intro { color: #c0c0c8; font-size: 16px; }
 .page-thanks p { color: var(--muted); margin-bottom: 22px; }
 .page-contact form { display: flex; flex-direction: column; gap: 14px; margin-top: 22px; padding: 28px 24px; text-align: left; background: linear-gradient(180deg, #080808 0%, #000000 100%); border: 1px solid var(--border); border-top: 2px solid rgba(255, 152, 0, 0.65); border-radius: var(--radius); box-shadow: var(--shadow); }
 .page-contact label { display: flex; flex-direction: column; gap: 6px; color: var(--muted); font-size: 14px; font-weight: 700; text-align: left; }
